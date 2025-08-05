@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCR Scanner</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .upload-box {
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      width: 300px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>OCR Scanner</h1>
+  <div class="upload-box">
+    <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.tiff" />
+    <p>Supported formats: PNG, JPG, JPEG, BMP, TIFF</p>
+    <img id="preview" style="display:none;" />
+    <button id="scanBtn" disabled>Scan Image</button>
+  </div>
+
+  <div class="result" id="result">
+    <strong>OCR Result will appear here...</strong>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const scanBtn = document.getElementById('scanBtn');
+    const resultBox = document.getElementById('result');
+
+    fileInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const fileType = file.type;
+        const validTypes = ['image/png', 'image/jpeg', 'image/bmp', 'image/tiff'];
+        if (!validTypes.includes(fileType)) {
+          alert('Unsupported file type. Please select an image file (PNG, JPG, JPEG, BMP, TIFF).');
+          this.value = '';
+          scanBtn.disabled = true;
+          preview.style.display = 'none';
+          return;
+        }
+
+        // Preview image
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+        scanBtn.disabled = false;
+      }
+    });
+
+    scanBtn.addEventListener('click', async function () {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      resultBox.innerHTML = '<em>Processing OCR...</em>';
+
+      const { data: { text } } = await Tesseract.recognize(file, 'eng');
+      resultBox.innerHTML = `<strong>OCR Result:</strong><br><pre>${text}</pre>`;
+    });
+  </script>
+
+</body>
+</html>
