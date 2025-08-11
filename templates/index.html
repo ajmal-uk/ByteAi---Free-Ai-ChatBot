@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="TL-CIRDOwMKS3eXdiir_f0Nyqp-3cdDvtFPep3sRytw">
+    <meta name="msvalidate.01" content="BD9DAA51530268B246570B7DB52E1579">
+    <meta name="google-adsense-account" content="ca-pub-5477043556031676">
+    <meta name="description" content="Byte AI - Advanced AI chatbot for content creation, coding assistance, research, and productivity. Free AI assistant powered by cutting-edge technology from Time Load.">
+    <meta name="keywords" content="Byte AI, AI chatbot, AI assistant, ChatGPT alternative, DeepSeek alternative, Gemini alternative, free AI chatbot, content generator, coding help, writing assistant, research AI, productivity tools, Time Load AI, AI technology, machine learning, NLP, creative writing AI, programming assistant, AI for students, AI for businesses">
+    <meta name="author" content="Ajmal U K">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="English">
+    <meta property="og:title" content="Byte AI - Advanced AI Assistant for Content, Coding & Research | Free ChatGPT Alternative">
+    <meta property="og:description" content="Byte AI is a powerful free AI chatbot for content creation, coding assistance, research, and productivity tools. Best alternative to ChatGPT, DeepSeek and Gemini.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://byteai.pythonanywhere.com/">
+    <meta property="og:image" content="https://byteai.pythonanywhere.com/static/images/byte-ai-social.jpg">
+    <meta property="og:site_name" content="Byte AI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Byte AI - Advanced AI Assistant | Free ChatGPT Alternative">
+    <meta name="twitter:description" content="Powerful free AI chatbot for content creation, coding assistance, research, and productivity tools. Best alternative to ChatGPT, DeepSeek and Gemini.">
+    <meta name="twitter:image" content="https://byteai.pythonanywhere.com/static/images/byte-ai-social.jpg">
+    <link rel="canonical" href="https://byteai.pythonanywhere.com/">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://byteai.pythonanywhere.com/static/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://byteai.pythonanywhere.com/static/images/Favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://byteai.pythonanywhere.com/static/images/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Byte AI - Advanced AI Assistant for Content, Coding & Research | Best Free ChatGPT Alternative</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Byte AI",
+      "url": "https://byteai.pythonanywhere.com",
+      "description": "Advanced AI assistant for content creation, coding help, research, and productivity tools. Best free alternative to ChatGPT, DeepSeek and Gemini.",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Ajmal U K"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250",
+        "bestRating": "5"
+      }
+    }
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        :root {
+            --primary-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --dark-bg: #0D0D0D;
+            --card-bg: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A5A5A5;
+            --accent: #333333;
+            --gradient: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --card-hover: #222;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .textarea-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .prompt__form-input {
+            height: 60px;
+            max-height: 225px;
+            min-height: 3rem;
+            width: 100%;
+            overflow-y: auto;
+            border: none;
+            resize: none;
+            font-size: 1.1rem;
+            padding: 1.25rem 2rem;
+            padding-right: 4rem;
+            border-radius: 50px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .prompt__form-input:focus {
+            background: var(--card-bg);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3);
+        }
+        
+        .prompt__form-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .prompt__form-input::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .prompt__form-button {
+            position: absolute;
+            border: none;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1rem;
+            width: 46px;
+            height: 46px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-bg);
+            background: var(--gradient);
+            transition: var(--transition);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .prompt__form-input:valid ~ #sendButton {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .prompt__form-button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button {
+            padding: 14px 28px;
+            background-color: var(--text-primary);
+            color: var(--dark-bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .button i {
+            font-size: 1.1rem;
+        }
+        
+        .download-button {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            box-shadow: none;
+        }
+        
+        .download-button:hover {
+            background-color: var(--text-primary);
+            color: var(--dark-bg);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Grid Styles */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .grid-item {
+            background-color: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-align: center;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 120px;
+            line-height: 1.5;
+            transition: var(--transition);
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .grid-item:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .grid-item::after {
+            content: "→";
+            position: absolute;
+            right: 20px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .grid-item:hover::after {
+            right: 15px;
+        }
+        
+        /* Features Styles */
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Ad Styles - Compliant with AdSense */
+        .ad-container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .ad-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+        
+        .ad-container ins {
+            display: block;
+            width: 100%;
+            min-height: 250px;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        #right-sidebar {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        #left-sidebar {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .sidebar-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .close-sidebar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .close-sidebar:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Testimonials Styles */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial:before {
+            content: "";
+            font-size: 80px;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Pricing Styles */
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 5px 15px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .plan-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .plan-features {
+            margin-bottom: 30px;
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .plan-features li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .pricing-card .button {
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--card-hover);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s;
+            color: var(--primary-color);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .comparison-table th {
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(79, 172, 254, 0.05);
+        }
+        
+        .checkmark {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .x-mark {
+            color: #ff6b6b;
+        }
+        
+        /* Stats Styles */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        /* CTA Section Styles */
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--dark-bg) 100%);
+            border-radius: 20px;
+            margin: 60px auto;
+            max-width: 1200px;
+            width: 95%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--card-bg);
+            width: 100%;
+            padding: 60px 20px 30px;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 40px;
+        }
+        
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        footer p {
+            font-size: 0.95rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        footer a:hover {
+            color: var(--primary-color);
+        }
+        
+        footer .social-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        footer .social-icons a {
+            font-size: 1.4rem;
+            margin: 0;
+            color: var(--text-secondary);
+            background-color: var(--accent);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        footer .social-icons a:hover {
+            color: var(--text-primary);
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: var(--dark-bg);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .features-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 20px 40px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-item {
+                font-size: 0.9rem;
+                min-height: 100px;
+                padding: 16px;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .testimonial {
+                padding: 20px;
+            }
+            
+            .testimonial:before {
+                font-size: 60px;
+            }
+            
+            .plan-price {
+                font-size: 2.5rem;
+            }
+            
+            .cta-section {
+                padding: 50px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            footer .social-icons {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Additional Styles */
+        .disabled-button {
+            pointer-events: none;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .keyword {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .featured-snippet {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .featured-snippet h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .use-case {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .use-case:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .use-case h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .use-case ul {
+            list-style-type: none;
+        }
+        
+        .use-case li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .use-case li:hover {
+            background-color: var(--accent);
+            outline: 1px solid var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .use-case li:active {
+            transform: translateY(0);
+        }
+        
+        .use-case li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 10px;
+        }
+        
+        .ai-technology-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .ai-tech-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ai-tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .ai-tech-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .ai-tech-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .blog-section {
+            margin-top: 60px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .blog-post {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .blog-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            gap: 8px;
+        }
+        
+        .ai-comparison {
+            margin-top: 60px;
+        }
+        
+        .comparison-chart {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+        
+        table.comparison-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        table.comparison-matrix th {
+            background-color: var(--card-bg);
+            padding: 15px;
+            text-align: left;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        table.comparison-matrix td {
+            padding: 15px;
+            border-bottom: 1px solid var(--accent);
+            color: var(--text-secondary);
+        }
+        
+        table.comparison-matrix tr:hover {
+            background-color: rgba(79, 172, 254, 0.05);
+        }
+        
+        .winner {
+            background-color: rgba(79, 172, 254, 0.1);
+            font-weight: 600;
+            color: var(--primary-color) !important;
+        }
+        
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        
+        .seo-content-box {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .seo-content-box h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .seo-content-box h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .seo-content-box p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .seo-content-box ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .seo-content-box li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .structured-faq {
+            margin: 40px 0;
+        }
+        
+        .structured-faq-item {
+            margin-bottom: 25px;
+        }
+        
+        .structured-faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .structured-faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Responsive adjustments for sidebars */
+        @media (min-width: 1400px) {
+            .sidebar {
+                display: block;
+            }
+            #left-sidebar, #right-sidebar {
+                display: block;
+            }
+            .container {
+                max-width: 1000px;
+                margin-left: 340px;
+                margin-right: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Breadcrumb for SEO -->
+    <div class="breadcrumb">
+        <a href="https://byteai.pythonanywhere.com">Home</a> 
+        <span>></span> 
+        <span>Byte AI - Advanced AI Assistant | Free ChatGPT Alternative</span>
+    </div>
+    
+    <!-- Left Sidebar for Ads -->
+    <div class="sidebar" id="left-sidebar">
+        <span class="close-sidebar" onclick="closeSidebar('left-sidebar')">×</span>
+        <h3>AI Resources</h3>
+        <div class="sidebar-content">
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+                <!-- Left Sidebar Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5477043556031676"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <h3>AI Tools Comparison</h3>
+            <p>See how Byte AI compares to ChatGPT, Gemini, and other AI assistants in terms of features, pricing, and capabilities.</p>
+            <a href="#ai-comparison" class="read-more">Compare Now →</a>
+        </div>
+    </div>
+    
+    <!-- Right Sidebar for Ads -->
+    <div class="sidebar" id="right-sidebar">
+        <span class="close-sidebar" onclick="closeSidebar('right-sidebar')">×</span>
+        <h3>Sponsored Content</h3>
+        <div class="sidebar-content">
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+                <!-- Right Sidebar Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5477043556031676"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <h3>Latest AI News</h3>
+            <p>Discover the newest advancements in artificial intelligence technology and how Byte AI is implementing these breakthroughs.</p>
+            <a href="#" class="read-more">Read More →</a>
+        </div>
+    </div>
+    
+    <div class="header">
+        <h1>Byte AI - Your Advanced AI Assistant</h1>
+        <p>Powered by cutting-edge artificial intelligence from Time Load, Byte AI helps with content creation, coding assistance, research, and productivity enhancement. <span class="keyword">Best free alternative to ChatGPT, DeepSeek and Gemini</span>.</p>
+        <div class="textarea-container">
+            <textarea id="chat-input" placeholder="Ask me anything..." class="prompt__form-input" required></textarea>
+            <button class="prompt__form-button" id="sendButton">
+                <i class="bx bx-send"></i>
+            </button>
+        </div>
+        <div class="header-buttons">
+            <a href="/chat" class="button"><i class="fas fa-comments"></i> Start Chatting Now</a>
+            <a href="/download-apk" class="button download-button"><i class="fas fa-mobile-alt"></i> Download App</a>
+        </div>
+    </div>
+
+    <!-- Ad Placement 1 - Compliant with AdSense -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <!-- Top Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- SEO Content Box 1 -->
+    <div class="container">
+        <div class="seo-content-box">
+            <h2>What is Byte AI? The Best Free ChatGPT Alternative</h2>
+            <p><span class="keyword">Byte AI</span> is an advanced artificial intelligence assistant developed by Time Load that provides powerful capabilities for content creation, coding assistance, research, and productivity enhancement. As one of the leading <span class="keyword">free ChatGPT alternatives</span>, Byte AI offers comparable features without the need for a paid subscription.</p>
+            
+            <p>Unlike many other AI chatbots, Byte AI specializes in:</p>
+            <ul>
+                <li>Generating high-quality, original content for blogs, social media, and marketing</li>
+                <li>Providing expert-level coding assistance across multiple programming languages</li>
+                <li>Delivering accurate, well-researched information on a wide range of topics</li>
+                <li>Offering personalized productivity tools to streamline your workflow</li>
+            </ul>
+            
+            <div class="featured-snippet">
+                <h3>Key Features of Byte AI</h3>
+                <p>Byte AI stands out from other AI assistants with its combination of <span class="keyword">free access</span>, <span class="keyword">advanced capabilities</span>, and <span class="keyword">user-friendly interface</span>. The platform is particularly strong in content generation, technical writing, and programming support, making it ideal for creators, developers, and professionals.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid-item">Write an essay on the impact of social media on society.</div>
+            <div class="grid-item">Create a poem about hope and resilience.</div>
+            <div class="grid-item">Write a short story about overcoming fear.</div>
+            <div class="grid-item">What are the most trending content ideas for YouTube in 2024?</div>
+            <div class="grid-item">How can I create viral content for TikTok?</div>
+            <div class="grid-item">What are the best topics for a personal blog in 2024?</div>
+            <div class="grid-item">Write an essay on climate change and its effects on the environment.</div>
+            <div class="grid-item">Write a story about a day in the life of a time traveler.</div>
+            <div class="grid-item">How do I write a captivating YouTube video description?</div>
+            <div class="grid-item">What are some creative ideas for a podcast?</div>
+            <div class="grid-item">Write a poem about the beauty of nature.</div>
+            <div class="grid-item">What are the best strategies for growing a YouTube channel?</div>
+            <div class="grid-item">Write an essay on the importance of mental health awareness.</div>
+            <div class="grid-item">What are some trending challenges on TikTok right now?</div>
+            <div class="grid-item">How do I make my YouTube thumbnails stand out?</div>
+            <div class="grid-item">Write a short story about an unexpected friendship.</div>
+            <div class="grid-item">What are some unique video ideas for Instagram Reels?</div>
+            <div class="grid-item">How can I improve my writing for social media?</div>
+            <div class="grid-item">Write an essay on the impact of technology on human relationships.</div>
+            <div class="grid-item">What are the best tips for starting a successful podcast?</div>
+        </div>
+    </div>
+    
+    <!-- SEO Content Box 2 -->
+    <div class="container section">
+        <div class="seo-content-box">
+            <h2>Why Choose Byte AI Over Other AI Assistants?</h2>
+            <p>When comparing <span class="keyword">Byte AI vs ChatGPT</span>, <span class="keyword">Byte AI vs Gemini</span>, or other AI assistants, several key advantages become apparent:</p>
+            
+            <ul>
+                <li><strong>Completely Free Access:</strong> Unlike many competitors that limit free usage, Byte AI offers full functionality without paywalls</li>
+                <li><strong>Specialized Content Creation:</strong> Superior capabilities for generating high-quality written content across various formats</li>
+                <li><strong>Advanced Coding Support:</strong> More comprehensive programming assistance with better context understanding</li>
+                <li><strong>Privacy-Focused:</strong> Stronger data protection policies than many commercial AI services</li>
+                <li><strong>User-Friendly Interface:</strong> Clean, intuitive design that's easier to navigate than complex enterprise solutions</li>
+            </ul>
+            
+            <p>For users looking for a <span class="keyword">free alternative to ChatGPT</span> that doesn't compromise on features, Byte AI represents an excellent choice. The platform is particularly well-suited for:</p>
+            
+            <ul>
+                <li>Content creators needing inspiration and drafting assistance</li>
+                <li>Developers seeking coding help and debugging support</li>
+                <li>Students requiring research and writing assistance</li>
+                <li>Business professionals looking to automate routine writing tasks</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ad Placement 2 - Compliant with AdSense -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <!-- Middle Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container section">
+        <h2 class="section-title">Unleash Your Potential with Powerful Features</h2>
+        <p class="section-subtitle">Byte AI is engineered with cutting-edge capabilities to supercharge your productivity, creativity, and decision-making. Discover tools designed to make work smarter, faster, and more intuitive.</p>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <h3 class="feature-title">Natural Conversations</h3>
+                <p class="feature-desc">Engage in human-like dialogue with our AI that understands context, remembers previous interactions, and adapts to your communication style for seamless exchanges.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="feature-title">Creative Content Generation</h3>
+                <p class="feature-desc">Generate blog posts, poetry, marketing copy, scripts, or even code with high-quality, original content customized to your tone, style, and objectives.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="feature-title">Comprehensive Research</h3>
+                <p class="feature-desc">Access accurate, well-sourced insights on any topic with in-depth summaries, competitive analysis, and detailed explanations tailored to your needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="feature-title">Programming Assistance</h3>
+                <p class="feature-desc">Debug code, master new programming languages, generate algorithms, or simplify complex coding concepts with step-by-step guidance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 class="feature-title">Multilingual Support</h3>
+                <p class="feature-desc">Communicate effortlessly in multiple languages with precise translations, culturally nuanced responses, and localized content generation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="feature-title">Productivity Tools</h3>
+                <p class="feature-desc">Summarize lengthy documents, extract key insights, rewrite content, and automate repetitive tasks to streamline workflows and save time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Secure & Private</h3>
+                <p class="feature-desc">Your data is protected with end-to-end encryption and a privacy-first architecture, ensuring your conversations and outputs remain confidential.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <h3 class="feature-title">Customizable AI Behavior</h3>
+                <p class="feature-desc">Personalize the AI's tone, personality, and response style to align with your workflow, brand voice, or specific project requirements.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Structured FAQ for SEO -->
+    <div class="container section">
+        <div class="structured-faq">
+            <h2 class="section-title">Byte AI: Frequently Asked Questions</h2>
+            
+            <div class="structured-faq-item">
+                <div class="structured-faq-question">Is Byte AI really free to use?</div>
+                <div class="structured-faq-answer">
+                    Yes, Byte AI offers a completely free tier with access to all core features. Unlike some competitors that limit free usage, Byte AI provides unlimited access to its AI capabilities without paywalls. We may offer premium plans in the future with additional features, but the core functionality will remain free.
+                </div>
+            </div>
+            
+            <div class="structured-faq-item">
+                <div class="structured-faq-question">How does Byte AI compare to ChatGPT?</div>
+                <div class="structured-faq-answer">
+                    Byte AI compares favorably to ChatGPT in several key areas. While both are powerful AI assistants, Byte AI offers more features in its free version, better content generation quality for long-form writing, and stronger privacy protections. Byte AI also has a more user-friendly interface and provides more detailed coding assistance.
+                </div>
+            </div>
+            
+            <div class="structured-faq-item">
+                <div class="structured-faq-question">Can Byte AI help with programming and coding?</div>
+                <div class="structured-faq-answer">
+                    Absolutely. Byte AI excels at programming assistance, offering capabilities like:
+                    <ul>
+                        <li>Debugging code in multiple languages</li>
+                        <li>Explaining complex programming concepts</li>
+                        <li>Generating boilerplate code</li>
+                        <li>Suggesting optimizations</li>
+                        <li>Helping learn new frameworks</li>
+                    </ul>
+                    Many developers find Byte AI's coding support superior to other AI assistants.
+                </div>
+            </div>
+            
+            <div class="structured-faq-item">
+                <div class="structured-faq-question">Is Byte AI suitable for business use?</div>
+                <div class="structured-faq-answer">
+                    Yes, Byte AI is excellent for business applications. Common business uses include:
+                    <ul>
+                        <li>Generating marketing content</li>
+                        <li>Creating business documents</li>
+                        <li>Automating customer service responses</li>
+                        <li>Analyzing market trends</li>
+                        <li>Preparing reports and presentations</li>
+                    </ul>
+                    The platform is particularly valuable for small businesses and entrepreneurs who need professional-quality outputs without large budgets.
+                </div>
+            </div>
+            
+            <div class="structured-faq-item">
+                <div class="structured-faq-question">How does Byte AI protect user privacy?</div>
+                <div class="structured-faq-answer">
+                    Byte AI takes privacy seriously with multiple protections:
+                    <ul>
+                        <li>End-to-end encryption for all conversations</li>
+                        <li>No selling or sharing of user data</li>
+                        <li>Option to delete conversation history</li>
+                        <li>Strict data retention policies</li>
+                        <li>No mandatory account creation for basic use</li>
+                    </ul>
+                    These measures make Byte AI one of the most privacy-focused AI assistants available.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ad Placement 3 - Compliant with AdSense -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <!-- Features Bottom Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <!-- Use Cases Section -->
+    <div class="container section">
+        <h2 class="section-title">Who Can Benefit From Byte AI?</h2>
+        <p class="section-subtitle">Our AI assistant is versatile enough to help professionals, students, and creatives across industries</p>
+        <div class="use-cases">
+            <div class="use-case">
+                <h3>For Content Creators</h3>
+                <ul>
+                    <li>Generate video script ideas and outlines</li>
+                    <li>Write engaging blog post introductions</li>
+                    <li>Create social media captions and posts</li>
+                    <li>Develop content calendars and strategies</li>
+                    <li>Rewrite content for different platforms</li>
+                    <li>Generate SEO-optimized meta descriptions</li>
+                </ul>
+            </div>
+            <div class="use-case">
+                <h3>For Developers</h3>
+                <ul>
+                    <li>Explain complex programming concepts</li>
+                    <li>Debug and optimize existing code</li>
+                    <li>Generate boilerplate code snippets</li>
+                    <li>Learn new frameworks and languages</li>
+                    <li>Document your code automatically</li>
+                    <li>Plan software architecture</li>
+                </ul>
+            </div>
+            <div class="use-case">
+                <h3>For Business Professionals</h3>
+                <ul>
+                    <li>Draft professional emails and reports</li>
+                    <li>Generate business plans and proposals</li>
+                    <li>Create marketing copy and ad campaigns</li>
+                    <li>Analyze market trends and competitors</li>
+                    <li>Prepare for meetings and presentations</li>
+                    <li>Automate customer service responses</li>
+                </ul>
+            </div>
+            <div class="use-case">
+                <h3>For Students & Researchers</h3>
+                <ul>
+                    <li>Summarize complex academic papers</li>
+                    <li>Generate essay outlines and drafts</li>
+                    <li>Explain difficult concepts in simple terms</li>
+                    <li>Create study guides and flashcards</li>
+                    <li>Help with math and science problems</li>
+                    <li>Suggest research paper topics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ad Placement 4 - Compliant with AdSense -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <!-- Blog Bottom Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <div class="container section">
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">Don't just take our word for it - hear from people using Byte AI every day</p>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p class="testimonial-text">Byte AI has transformed how I create content for my YouTube channel. I can generate script outlines in minutes instead of hours, and the quality is consistently excellent.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JS</div>
+                    <div class="author-info">
+                        <h4>Jamie Smith</h4>
+                        <p>Tech YouTuber (250K subs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">As a freelance writer, Byte AI helps me overcome writer's block and generate fresh ideas. It's like having a creative partner available 24/7.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Maria Rodriguez</h4>
+                        <p>Content Writer & Blogger</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">I use Byte AI daily for coding help. It explains complex concepts clearly and helps me debug faster. It's become an essential part of my developer toolkit.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">TK</div>
+                    <div class="author-info">
+                        <h4>Thomas Kim</h4>
+                        <p>Full-Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <div class="container section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about Byte AI</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is Byte AI and how does it work?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Byte AI is an advanced artificial intelligence assistant powered by cutting-edge natural language processing technology. It works by analyzing your input, understanding the context and intent, and generating human-like responses based on its extensive training data. The system continuously learns and improves to provide more accurate and helpful answers over time.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is Byte AI free to use?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Byte AI offers a completely free tier with full access to all core features. We also offer premium plans with additional capabilities for power users and businesses. Our goal is to make AI assistance accessible to everyone while maintaining sustainable development.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does Byte AI compare to other AI assistants?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Byte AI stands out with its combination of advanced capabilities, user-friendly interface, and commitment to privacy. Unlike many competitors, we offer extended context memory, more customization options, and specialized tools for content creators, developers, and business professionals. Our focus on practical applications rather than just conversation makes Byte AI particularly valuable for productivity.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my data private when using Byte AI?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. Privacy is a core principle of Byte AI. We implement end-to-end encryption for all conversations, and we never share or sell your data to third parties. You can delete your conversation history at any time, and we don't use your interactions to train our models without explicit consent.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What languages does Byte AI support?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Byte AI currently supports over 50 languages with high proficiency, including English, Spanish, French, German, Chinese, Japanese, and many more. Our multilingual capabilities continue to expand with regular updates to better serve our global user base.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use Byte AI for commercial purposes?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Byte AI can be used for commercial purposes within our terms of service. Many businesses use our platform for content creation, customer support, and internal productivity. For high-volume commercial use, we recommend our upcoming enterprise plans which include additional features and support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ad Placement 5 - Compliant with AdSense -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <!-- FAQ Bottom Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <!-- Pricing Section -->
+    <div class="container section">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">Choose the plan that fits your needs - cancel anytime</p>
+        <div class="pricing-plans">
+            <div class="pricing-card">
+                <h3 class="plan-name">Free</h3>
+                <div class="plan-price">$0 <span>/month</span></div>
+                <ul class="plan-features">
+                    <li>Unlimited messages</li>
+                    <li>Basic content generation</li>
+                    <li>Standard response quality</li>
+                    <li>No API access</li>
+                    <li>Access to basic features</li>
+                    <li>Community support</li>
+                    <li>Multi-device access</li>
+                    <li>Regular updates</li>
+                </ul>
+                <a href="/signup" class="button">Get Started</a>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3 class="plan-name">Pro</h3>
+                <div class="plan-price">$19 <span>/month</span></div>
+                <ul class="plan-features">
+                    <li>Unlimited messages</li>
+                    <li>Advanced content generation</li>
+                    <li>Higher quality responses</li>
+                    <li>Priority support</li>
+                    <li>API access (500 calls/month)</li>
+                    <li>Extended context memory</li>
+                    <li>Customizable AI behavior</li>
+                    <li>Early access to new features</li>
+                </ul>
+                <a class="button disabled-button" href="javascript:void(0);">Coming Soon</a>
+            </div>
+            <div class="pricing-card">
+                <h3 class="plan-name">Enterprise</h3>
+                <div class="plan-price">Custom <span>/month</span></div>
+                <ul class="plan-features">
+                    <li>Unlimited messages</li>
+                    <li>Tailored AI solutions</li>
+                    <li>Dedicated account manager</li>
+                    <li>24/7 premium support</li>
+                    <li>Team collaboration tools</li>
+                    <li>Unlimited API access</li>
+                    <li>Custom integrations</li>
+                    <li>Code interpreter</li>
+                </ul>
+                <a class="button disabled-button" href="javascript:void(0);">Coming Soon</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Experience Byte AI?</h2>
+        <p class="cta-text">Join thousands of users who are already boosting their productivity with our advanced AI assistant. No credit card required to get started.</p>
+        <div class="header-buttons">
+            <a href="/chat" class="button"><i class="fas fa-comments"></i> Start Chatting Now</a>
+            <a href="/download-apk" class="button download-button"><i class="fas fa-mobile-alt"></i> Download Mobile App</a>
+        </div>
+    </div>
+    
+    <footer>
+        <h3>Byte AI - Advanced AI Assistant</h3>
+        <p>Powered by Time Load | Created by Ajmal U K | Transforming how you work, create, and communicate with artificial intelligence</p>
+        
+        <div class="social-icons">
+            <a href="/about">About Us</a>
+            <a href="/blog">Blog</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+            <a href="/faq">FAQ</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        
+        <p>&copy; 2024 Byte AI by Time Load. Created by Ajmal U K. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Chat functionality
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('sendButton');
+        
+        function sendMessage() {
+            const message = chatInput.value;
+            chatInput.value = "";
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = '/chat';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        function redirectToChat(element) {
+            const text = element.innerText;
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = '/chat';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        // Event listeners
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.onclick = function() {
+                redirectToChat(item);
+            };
+        });
+        
+        document.querySelectorAll('.use-case li').forEach(item => {
+            item.onclick = function() {
+                redirectToChat(item);
+            };
+        });
+        
+        chatInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+        
+        sendButton.addEventListener('click', () => {
+            sendMessage();
+        });
+        
+        // Textarea auto-resize
+        chatInput.addEventListener("input", () => {
+            chatInput.style.height = "60px";
+            const newHeight = Math.min(chatInput.scrollHeight, 225);
+            chatInput.style.height = newHeight + "px";
+        });
+        
+        // Dynamic placeholder text
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.getElementById('chat-input');
+            const questions = [
+                "What would you like to ask?",
+                "How can I assist you today?",
+                "Type your question here...",
+                "Need help with something specific?"
+            ];
+            let questionIndex = 0;
+            
+            function updatePlaceholder() {
+                textarea.setAttribute('placeholder', questions[questionIndex]);
+                questionIndex = (questionIndex + 1) % questions.length;
+            }
+            
+            setInterval(updatePlaceholder, 3000);
+            updatePlaceholder();
+            shuffleGrid();
+            
+            // Initialize FAQ toggle functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+        
+        function shuffleGrid() {
+            const grid = document.querySelector('.grid');
+            const gridItems = Array.from(grid.children);
+            for (let i = gridItems.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                grid.appendChild(gridItems[j]);
+            }
+        }
+        
+        // Sidebar functionality
+        function closeSidebar(sidebarId) {
+            document.getElementById(sidebarId).style.display = 'none';
+        }
+        
+        // Show sidebars on larger screens
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1400) {
+                document.getElementById('left-sidebar').style.display = 'block';
+                document.getElementById('right-sidebar').style.display = 'block';
+            } else {
+                document.getElementById('left-sidebar').style.display = 'none';
+                document.getElementById('right-sidebar').style.display = 'none';
+            }
+        });
+        
+        // Initialize sidebar display
+        if (window.innerWidth >= 1400) {
+            document.getElementById('left-sidebar').style.display = 'block';
+            document.getElementById('right-sidebar').style.display = 'block';
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

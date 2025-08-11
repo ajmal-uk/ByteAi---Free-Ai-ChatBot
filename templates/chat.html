@@ -3297,6 +3297,15 @@ pre {
 	    }
 	});
 	function analyzePromptForMixedIntents(prompt) {
+	    // Check if the prompt contains multiple distinct requests
+	    // A request is considered distinct if it contains an image generation keyword
+	    const lowerPrompt = prompt.toLowerCase();
+	    const imageKeywordsFound = imageGenerationKeywords.filter(keyword => lowerPrompt.includes(keyword));
+	    // If no image keywords are found, treat the entire prompt as a single request
+	    if (imageKeywordsFound.length === 0) {
+	        return [{ text: prompt, isImageRequest: false }];
+	    }
+	    // If image keywords are found, split the prompt and check each part
 	    const parts = prompt.split(/,\s*|\sand\s+/).map(part => part.trim());
 	    const requests = [];
 	    parts.forEach(part => {
@@ -3306,7 +3315,7 @@ pre {
 	    });
 	    return requests;
 	}
-	        messageForm.addEventListener('submit', (e) => {
+	messageForm.addEventListener('submit', (e) => {
 	    e.preventDefault();
 	    if (isGeneratingResponse) return;
 	    const prompt = chatInput.value.trim();
@@ -3907,50 +3916,69 @@ pre {
             clearInterval(thinkingInterval);
             updateThinkingText(reasoningContentElement, "Finalizing response...");
         }
-    }, 2000); // Adjusted to 2 seconds for better pacing with fade effect
+    }, 2000);
 }
 	async function requestApiResponse(incomingMessageElement, options) {
 	    const messageTextElement = incomingMessageElement.querySelector(".message__text");
 	    try {
 	        const messages = Array.from(document.querySelectorAll('.message'));
-	        const formattedChats = [];
-	        for (let i = 0; i < messages.length; i += 2) {
-	            const userMessage = messages[i];
-	            const assistantMessage = messages[i + 1];
-	            if (userMessage && assistantMessage) {
-	                formattedChats.push({
-	                    userInput: userMessage.querySelector('.message__text')?.textContent || '',
-	                    aiResponse: assistantMessage.querySelector('.message__text')?.textContent || ''
-	                });
-	            }
-	        }
-	        let previousImagePrompt = "";
-	        if (options.imageModification) {
-	            for (let i = messages.length - 1; i >= 0; i--) {
-	                const msg = messages[i];
-	                if (msg.classList.contains('message--outgoing')) {
-	                    const text = msg.querySelector('.message__text')?.textContent;
-	                    if (text) {
-	                        previousImagePrompt = text;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	        const controller = new AbortController();
-	        const timeoutId = setTimeout(() => controller.abort(), 30000);
-	        const response = await fetch('/predict', {
-	            method: "POST",
-	            headers: { "Content-Type": "application/json" },
-	            body: JSON.stringify({
-	                message: currentUserMessage,
-	                previousChats: formattedChats,
-	                userName: localStorage.getItem('username') || "User",
-	                options: options,
-	                previousImagePrompt: previousImagePrompt
-	            }),
-	            signal: controller.signal
-	        });
+			const formattedChats = [];
+			for (let i = 0; i < messages.length; i += 2) {
+				const userMessage = messages[i];
+				const assistantMessage = messages[i + 1];
+				if (userMessage && assistantMessage) {
+					formattedChats.push({
+						userInput: userMessage.querySelector('.message__text')?.textContent || '',
+						aiResponse: assistantMessage.querySelector('.message__text')?.textContent || ''
+					});
+				}
+			}
+			let previousChat = null;
+			let previousUserInputs = [];
+			if (formattedChats.length > 0) {
+				previousChat = formattedChats.pop();
+				const seen = new Set();
+				previousUserInputs = formattedChats
+					.map(c => c.userInput.trim())
+					.reverse()
+					.map(u => u.replace(/[^\w\s?.!,'"-]/g, ''))
+					.filter(u => {
+						if (!u) return false;
+						if (seen.has(u)) return false; 
+						seen.add(u);
+						return true;
+					});
+			}
+
+			let previousImagePrompt = "";
+			if (options.imageModification) {
+				for (let i = messages.length - 1; i >= 0; i--) {
+					const msg = messages[i];
+					if (msg.classList.contains('message--outgoing')) {
+						const text = msg.querySelector('.message__text')?.textContent;
+						if (text) {
+							previousImagePrompt = text;
+							break;
+						}
+					}
+				}
+			}
+			const controller = new AbortController();
+			const timeoutId = setTimeout(() => controller.abort(), 30000);
+			const response = await fetch('/predict', {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					message: currentUserMessage,
+					userName: localStorage.getItem('username') || "User",
+					options: options,
+					previousImagePrompt: previousImagePrompt,
+					previousUserInputs: previousUserInputs,
+					previousChat: previousChat
+				}),
+				signal: controller.signal
+			});
+
 	        clearTimeout(timeoutId);
 	        const responseData = await response.json();
 	        if (!response.ok) throw new Error(responseData.error || "API request failed");
@@ -4327,70 +4355,57 @@ async function copyMessageToClipboard(copyButton) {
 
 
 	async function submitEditedMessage(submitButton) {
-    const messageElement = submitButton.closest('.message--outgoing');
-    const textArea = messageElement.querySelector('.edit-message-input');
-    const editedText = sanitizeInput(textArea.value.trim());
-    if (!editedText) {
-        showToast('Edited message cannot be empty!', 'error');
-        return;
-    }
-    
-    // Determine options based on the edited text
-    const editedOptions = determineOptions(editedText);
-    
-    const sessionIndex = chatSessions.findIndex(session => session.id === currentSessionId);
-    if (sessionIndex !== -1) {
-        const chatIndex = chatSessions[sessionIndex].chats.findIndex(chat => chat.userInput === submitButton.getAttribute('data-original'));
-        if (chatIndex !== -1) {
-            const originalChat = chatSessions[sessionIndex].chats[chatIndex];
-            if (originalChat.imageId) {
-                try {
-                    await deleteChatImageById(originalChat.imageId);
-                } catch (error) {
-                    console.error('Failed to delete old image:', error);
-                }
-            }
-            // Update chat with edited text and options
-            chatSessions[sessionIndex].chats[chatIndex].userInput = editedText;
-            chatSessions[sessionIndex].chats[chatIndex].aiResponse = "";
-            chatSessions[sessionIndex].chats[chatIndex].feedback = null;
-            chatSessions[sessionIndex].chats[chatIndex].imageId = null;
-            chatSessions[sessionIndex].chats[chatIndex].isImageGeneration = editedOptions.imageGeneration;
-            const [activeSession] = chatSessions.splice(sessionIndex, 1);
-            chatSessions.unshift(activeSession);
-            saveChatSessions();
-            loadChatSessions();
-        }
-    }
-    
-    messageElement.innerHTML = `
-        <div class="message__content" style="display: flex; flex-direction: column; align-items: flex-end;">
-            <p class="message__text">${editedText}</p>
-            <div class="message__icons" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                <span class="message__icon copy"><i class='bx bx-copy-alt'></i></span>
-                <span class="message__icon edit"><i class='bx bx-pencil' ></i></span>
-            </div>
-        </div>
-    `;
-    
-    const nextMessage = messageElement.nextElementSibling;
-    if (nextMessage && nextMessage.classList.contains('message--incoming')) {
-        nextMessage.remove();
-    }
-    
-    currentUserMessage = editedText;
-    isGeneratingResponse = false;
-    
-    // Pass the determined options to displayLoadingAnimation
-    setTimeout(() => displayLoadingAnimation(editedOptions), 500);
-}
-function updateThinkingText(element, text) {
-    element.style.opacity = 0;
-    setTimeout(() => {
-        element.textContent = text;
-        element.style.opacity = 1;
-    }, 300); // Matches the CSS transition duration
-}
+	    const messageElement = submitButton.closest('.message--outgoing');
+	    const textArea = messageElement.querySelector('.edit-message-input');
+	    const editedText = sanitizeInput(textArea.value.trim());
+	    if (!editedText) {
+	        showToast('Edited message cannot be empty!', 'error');
+	        return;
+	    }
+	    // Determine options based on the edited text
+	    const editedOptions = determineOptions(editedText);
+	    const sessionIndex = chatSessions.findIndex(session => session.id === currentSessionId);
+	    if (sessionIndex !== -1) {
+	        const chatIndex = chatSessions[sessionIndex].chats.findIndex(chat => chat.userInput === submitButton.getAttribute('data-original'));
+	        if (chatIndex !== -1) {
+	            const originalChat = chatSessions[sessionIndex].chats[chatIndex];
+	            if (originalChat.imageId) {
+	                try {
+	                    await deleteChatImageById(originalChat.imageId);
+	                } catch (error) {
+	                    console.error('Failed to delete old image:', error);
+	                }
+	            }
+	            // Update chat with edited text and options
+	            chatSessions[sessionIndex].chats[chatIndex].userInput = editedText;
+	            chatSessions[sessionIndex].chats[chatIndex].aiResponse = "";
+	            chatSessions[sessionIndex].chats[chatIndex].feedback = null;
+	            chatSessions[sessionIndex].chats[chatIndex].imageId = null;
+	            chatSessions[sessionIndex].chats[chatIndex].isImageGeneration = editedOptions.imageGeneration;
+	            const [activeSession] = chatSessions.splice(sessionIndex, 1);
+	            chatSessions.unshift(activeSession);
+	            saveChatSessions();
+	            loadChatSessions();
+	        }
+	    }
+	    messageElement.innerHTML = `
+	        <div class="message__content" style="display: flex; flex-direction: column; align-items: flex-end;">
+	            <p class="message__text">${editedText}</p>
+	            <div class="message__icons" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+	                <span class="message__icon copy"><i class='bx bx-copy-alt'></i></span>
+	                <span class="message__icon edit"><i class='bx bx-pencil' ></i></span>
+	            </div>
+	        </div>
+	    `;
+	    const nextMessage = messageElement.nextElementSibling;
+	    if (nextMessage && nextMessage.classList.contains('message--incoming')) {
+	        nextMessage.remove();
+	    }
+	    currentUserMessage = editedText;
+	    isGeneratingResponse = false;
+	    // Pass the determined options to displayLoadingAnimation
+	    setTimeout(() => displayLoadingAnimation(editedOptions), 500);
+	}
 
 	function clearChatHistory() {
 	    chatHistoryContainer.innerHTML = "";
