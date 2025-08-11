@@ -1,16 +1,18 @@
 import os
+import re
 from flask import Flask, render_template, request, jsonify, send_from_directory, send_file
 import google.generativeai as genai
 import random
 from groq import Groq
 from knowledge_base import get_ai_response
-import re
 from flask_cors import CORS
 from googlesearch import search
 import logging
 from google import genai as genai_image
 from google.genai import types
 import base64
+from requests.exceptions import RequestException
+import traceback
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -92,7 +94,7 @@ IMAGE_MODIFICATION_INSTRUCTION = "Your name is Byte AI, an image generation mode
 
 def GoogleSearch(search_query):
     try:
-        if  "skip" in search_query:
+        if "skip" in search_query:
             return ""
         localized_query = f"{search_query} site:.in"
         results = list(search(localized_query, advanced=True, num_results=5, lang="en"))
@@ -100,13 +102,13 @@ def GoogleSearch(search_query):
         for i in results:
             Answer += f"Title: {i.title}\nDescription: {i.description}\nURL: {i.url}\n\n"
         Answer += "[end]"
-
-        print(Answer)
         return Answer
-
-
-    except RuntimeError as e:
-        return f"Error generating search query: {str(e)}"
+    except RequestException as e:
+        logger.error(f"Network error during Google Search: {e}")
+        return "Error: Unable to fetch search results due to a network issue."
+    except Exception as e:
+        logger.exception("Unexpected error in GoogleSearch")
+        return f"Error: {str(e)}"
 
 def Gemini_gen_text(prompt: str, system_instruction: str = SYSTEM_INSTRUCTION, max_attempts=None) -> str:
     if max_attempts is None:
@@ -130,10 +132,12 @@ def Gemini_gen_text(prompt: str, system_instruction: str = SYSTEM_INSTRUCTION, m
             chat_session = model.start_chat(history=[])
             resp = chat_session.send_message(prompt)
             return resp.text
+        except RequestException as e:
+            logger.error(f"Network error in Gemini text API: {e}")
+            last_exc = e
         except Exception as e:
             logger.exception("Gemini text call failed, rotating key.")
             last_exc = e
-            continue
     raise RuntimeError(f"Gemini text calls failed. Last error: {last_exc}")
 
 def Groq_gen_text(prompt: str, instructions: str, max_attempts=None) -> str:
@@ -152,10 +156,12 @@ def Groq_gen_text(prompt: str, instructions: str, max_attempts=None) -> str:
                 model="llama3-8b-8192",
             )
             return chat_completion.choices[0].message.content
+        except RequestException as e:
+            logger.error(f"Network error in Groq API: {e}")
+            last_exc = e
         except Exception as e:
             logger.exception("Groq call failed, rotating key.")
             last_exc = e
-            continue
     raise RuntimeError(f"Groq calls failed. Last error: {last_exc}")
 
 def Gemini_generate_image(prompt: str):
@@ -177,10 +183,12 @@ def Gemini_generate_image(prompt: str):
                         image_data = part.inline_data.data
                         image_b64 = base64.b64encode(image_data).decode('utf-8')
                         return f"data:image/png;base64,{image_b64}"
+        except RequestException as e:
+            logger.error(f"Network error in Gemini image API: {e}")
+            last_exc = e
         except Exception as e:
             logger.exception("Gemini image generation failed on a key, rotating.")
             last_exc = e
-            continue
     raise RuntimeError(f"Image generation failed with all Gemini keys. Last error: {last_exc}")
 
 def Prompt_generation(user_message, 
@@ -229,47 +237,77 @@ def chat():
     return render_template('chat.html')
 
 @app.route('/predict', methods=['POST'])
-def GEN():
-    data = request.get_json() or {}
-    user_message = data.get("message", "")
-    if not user_message or not user_message.strip():
-        return jsonify({"response": "Please provide your message."}), 400
+def ByteAi():
+    try:
+        data = request.get_json(force=True, silent=True) or {}
+        user_message = data.get("message", "")
+        if not user_message or not user_message.strip():
+            return jsonify({"response": "Please provide your message."}), 400
 
-    options = data.get("options", {}) or {}
-    web_search = bool(options.get('webSearch', False))
-    deep_think = bool(options.get('deepThink', False)) 
-    image_generation = bool(options.get('imageGeneration', False))
-    image_modification = bool(options.get('imageModification', False))
-    userName = data.get("userName", "User")
-    previousUserInputs = data.get("previousUserInputs", []) or []
-    previous_chat = data.get("previousChat", {}) or {}
-    previous_image_prompt = data.get('previousImagePrompt', [])
-    previousUserInputs = previousUserInputs[:10]
-    
-    kb_response = get_ai_response(user_message)
-    if kb_response and not (image_generation or image_modification):
-        return jsonify({"response": kb_response})
-    
-    prompt = Prompt_generation(
-        user_message=user_message,
-        userName=userName,
-        previousUserInputs=previousUserInputs,
-        previous_chat=previous_chat,
-        previous_image_prompt=previous_image_prompt,
-        web_search=web_search,
-        deep_think=deep_think,
-        image_generation=image_generation,
-        image_modification = image_modification
-    )
+        options = data.get("options", {}) or {}
+        web_search = bool(options.get('webSearch', False))
+        deep_think = bool(options.get('deepThink', False)) 
+        image_generation = bool(options.get('imageGeneration', False))
+        image_modification = bool(options.get('imageModification', False))
+        userName = data.get("userName", "User")
+        previousChats = data.get("previousChats", []) or []
 
-    if image_generation or image_modification:
-        image_data_uri = Gemini_generate_image(prompt=prompt)
-        return jsonify({"response": image_data_uri, "isImageGeneration": True})
-    else:
-        LLM = random.choice(AVAILABLE_MODELS)
-        response = LLM(prompt, SYSTEM_INSTRUCTION)
-        return jsonify({"response": response})
+        previous_image_prompt = data.get('previousImagePrompt', [])
 
+        previous_chat = {}
+        previousUserInputs = []
+
+        if previousChats:
+            previousChats = previousChats[:-1]
+            if previousChats:
+                previous_chat = previousChats[-1]
+            previousChats = previousChats[:-1]
+            if previousChats:
+                seen = set()
+                cleaned_inputs = []
+                for chat in reversed(previousChats):
+                    clean_input = re.sub(r'[^\w\s.,!?-]', '', chat.get("userInput", "").strip())
+                    if clean_input and clean_input not in seen:
+                            cleaned_inputs.append(clean_input)
+                            seen.add(clean_input)
+                previousUserInputs = cleaned_inputs
+        print(previous_chat, previousUserInputs)
+
+        kb_response = get_ai_response(user_message)
+        if kb_response and not (image_generation or image_modification):
+            return jsonify({"response": kb_response})
+
+        prompt = Prompt_generation(
+            user_message=user_message,
+            userName=userName,
+            previousUserInputs=previousUserInputs,
+            previous_chat=previous_chat,
+            previous_image_prompt=previous_image_prompt,
+            web_search=web_search,
+            deep_think=deep_think,
+            image_generation=image_generation,
+            image_modification=image_modification
+        )
+
+        if image_generation or image_modification:
+            try:
+                image_data_uri = Gemini_generate_image(prompt=prompt)
+                return jsonify({"response": image_data_uri, "isImageGeneration": True})
+            except Exception as e:
+                logger.exception("Image generation failed")
+                return jsonify({"response": f"Image generation failed: {str(e)}"}), 500
+        else:
+            try:
+                LLM = random.choice(AVAILABLE_MODELS)
+                response = LLM(prompt, SYSTEM_INSTRUCTION)
+                return jsonify({"response": response})
+            except Exception as e:
+                logger.exception("LLM text generation failed")
+                return jsonify({"response": f"Text generation failed: {str(e)}"}), 500
+    except Exception as e:
+        logger.error(f"Unexpected error in /predict: {e}")
+        logger.debug(traceback.format_exc())
+        return jsonify({"response": f"Internal Server Error: {str(e)}"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True,port=8080)
