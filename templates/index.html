@@ -195,7 +195,7 @@
         .textarea-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto 40px;
         }
         
@@ -207,8 +207,8 @@
             overflow-y: auto;
             border: none;
             resize: none;
-            font-size: 1.1rem;
-            padding: 1.25rem 2rem;
+            font-size: 1rem;
+            padding: 1rem 3rem 1rem 1rem;
             padding-right: 4.5rem;
             border-radius: 50px;
             background: var(--card-bg);
@@ -334,12 +334,29 @@
             opacity: 0.9;
         }
         
-        /* Grid Styles */
+        /* Improved Grid Styles - Two rows, horizontal scroll, no visible scrollbar */
+        .grid-container {
+            overflow-x: auto;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+        
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-rows: repeat(2, 1fr);
+            grid-auto-columns: minmax(250px, max-content);
+            grid-auto-flow: column;
+            gap: 15px;
+            width: max-content;
+        }
+        
+        .grid::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .grid {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         
         .grid-item {
@@ -875,7 +892,7 @@
             margin-right: auto;
         }
         
-        /* Footer Styles */
+        /* Improved Footer Styles */
         footer {
             background-color: var(--card-bg);
             width: 100%;
@@ -883,6 +900,7 @@
             text-align: center;
             color: var(--text-secondary);
             margin-top: 40px;
+            border-top: 1px solid var(--accent);
         }
         
         footer h3 {
@@ -895,34 +913,42 @@
             font-size: 0.95rem;
             margin-top: 30px;
             margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        footer a {
+        footer .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        footer .footer-links a {
             color: var(--text-primary);
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 15px;
             font-weight: 500;
             transition: var(--transition);
+            font-size: 1rem;
         }
         
-        footer a:hover {
+        footer .footer-links a:hover {
             color: var(--primary-color);
+            text-decoration: underline;
         }
         
         footer .social-icons {
             margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
         
         footer .social-icons a {
-            font-size: 1.4rem;
-            margin: 0;
+            font-size: 1.6rem;
             color: var(--text-secondary);
             background-color: var(--accent);
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1116,18 +1142,22 @@
             margin-left: 20px;
             color: var(--text-secondary);
             margin-bottom: 20px;
+            list-style-type: none; /* Remove default bullets */
         }
         
         .use-case li {
             margin-bottom: 12px;
             line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
         }
         
         .use-case li:before {
-            content: "•";
-            color: var(--primary-color);
+            content: "✓"; /* Change to checkmark or remove if unwanted */
             position: absolute;
             left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
         }
         
         .ai-technology-section {
@@ -1440,93 +1470,98 @@
             background-color: var(--primary-color);
         }
         
-        /* New Interactive Elements */
-        .interactive-poll {
+        /* Improved Interactive Elements */
+        .interactive-poll, .interactive-quiz {
             background-color: var(--card-bg);
             border-radius: 16px;
             padding: 40px;
             margin-top: 50px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .poll-question {
+        .poll-question, .quiz-question {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: var(--text-primary);
         }
         
-        .poll-options {
+        .poll-options, .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             max-width: 400px;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
         }
         
-        .poll-option {
-            padding: 10px;
+        .poll-option, .quiz-option {
+            padding: 15px 20px;
             background-color: var(--accent);
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .poll-option:hover {
+        .poll-option:hover, .quiz-option:hover {
             background-color: var(--primary-color);
             color: var(--dark-bg);
+            transform: translateY(-2px);
         }
         
-        .poll-results {
-            margin-top: 20px;
+        .poll-option.selected, .quiz-option.selected {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .poll-results, .quiz-result {
+            margin-top: 25px;
             display: none;
+            background-color: var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        
+        .poll-result-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .poll-bar-container {
+            flex-grow: 1;
+            background-color: var(--dark-bg);
+            border-radius: 4px;
+            height: 20px;
+            margin: 0 10px;
+            overflow: hidden;
         }
         
         .poll-bar {
-            background-color: var(--accent);
-            height: 20px;
-            margin-bottom: 5px;
-            border-radius: 4px;
-            transition: width 0.5s ease;
+            height: 100%;
+            background: var(--gradient);
+            transition: width 1s ease;
         }
         
-        .interactive-quiz {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 50px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
+        .poll-percentage {
+            min-width: 40px;
+            text-align: right;
         }
         
-        .quiz-question {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+        .quiz-result.correct {
+            color: green;
+            font-weight: bold;
         }
         
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-            margin: 0 auto 20px;
-        }
-        
-        .quiz-option {
-            padding: 10px;
-            background-color: var(--accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .quiz-option:hover {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
-        }
-        
-        .quiz-result {
-            margin-top: 20px;
-            display: none;
+        .quiz-result.incorrect {
+            color: red;
             font-weight: bold;
         }
         
@@ -1624,7 +1659,7 @@
             </button>
         </div>
         <div class="header-buttons">
-            <a href="/chat" class="button"><i class="fas fa-comments"></i> Start Chatting Now</a>a
+            <a href="/chat" class="button"><i class="fas fa-comments"></i> Start Chatting Now</a>
             <a href="/download-apk" class="button download-button"><i class="fas fa-mobile-alt"></i> Download App</a>
         </div>
     </div>
@@ -1711,7 +1746,8 @@
     </div>
 
     <div class="container">
-        <div class="grid">
+        <div class="grid-container">
+            <div class="grid">
             <div class="grid-item">Write an essay on the impact of social media on society.</div>
             <div class="grid-item">Create a poem about hope and resilience.</div>
             <div class="grid-item">Write a short story about overcoming fear.</div>
@@ -1737,6 +1773,7 @@
             <div class="grid-item">Create a business plan for a startup in AI sector.</div>
             <div class="grid-item">What are the top AI trends for 2026?</div>
             <div class="grid-item">How to implement machine learning in e-commerce.</div>
+        </div>
         </div>
     </div>
     
@@ -1986,7 +2023,7 @@
                     <li>Develop content calendars and strategies with autonomous agents</li>
                     <li>Rewrite content for different platforms</li>
                     <li>Generate SEO-optimized meta descriptions</li>
-                    <li>Create email newsletters with personalized content</li>
+                    <li>Email newsletters with personalized content</li>
                     <li>Analyze content performance metrics</li>
                 </ul>
             </div>
@@ -2025,7 +2062,7 @@
                     <li>Create study guides and flashcards with autonomous agents</li>
                     <li>Help with math and science problems using multimodal AI</li>
                     <li>Suggest research paper topics with ethical AI considerations</li>
-                    <li>Cite sources automatically in APA/ML A/Chicago styles</li>
+                    <li>Cite sources automatically in APA/MLA/Chicago styles</li>
                     <li>Generate hypothesis and experiment designs</li>
                 </ul>
             </div>
@@ -2082,7 +2119,7 @@
         <p class="section-subtitle">Don't just take our word for it - hear from people using Byte AI every day. With 4.9/5 rating from 1850+ reviews, Byte AI is the top-rated free AI assistant 2025. We've collected over 2,000 testimonials in 2025 alone.</p>
         <div class="testimonials">
             <div class="testimonial">
-                <p class="testimonial-text">Byte AI has transformed how I create content for my YouTube channel. With generative AI, I can generate script outlines in minutes instead of hours, and the quality is consistently excellent. Best free AI tool 2025!</p>
+                <p class="testimonial-text">Byte AI has transformed how I create content for my YouTube channel. With generative AI, I can generate script outlines in minutes instead of hours instead of hours, and the quality is consistently excellent. Best free AI tool 2025!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">JS</div>
                     <div class="author-info">
@@ -2475,7 +2512,7 @@
                     <li>Regular updates with AI trends 2025</li>
                     <li>50 images/month</li>
                 </ul>
-                <a href="/signup" class="button">Get Started</a>
+                <a href="/chat" class="button">Get Started</a>
             </div>
             <div class="pricing-card popular">
                 <div class="popular-badge">Most Popular</div>
@@ -2524,7 +2561,7 @@
         <div id="demo-output" class="demo-output"></div>
     </div>
     
-    <!-- New Interactive Poll -->
+    <!-- Improved Interactive Poll -->
     <div class="container section interactive-poll">
         <h2 class="section-title">Quick Poll: Your Primary Use for AI in 2025</h2>
         <p class="poll-question">What do you use AI assistants for most?</p>
@@ -2537,23 +2574,43 @@
         </div>
         <div class="poll-results" id="poll-results">
             <p>Results (Sample Data):</p>
-            <div>Content Creation: <div class="poll-bar" style="width: 40%;"></div> 40%</div>
-            <div>Coding Help: <div class="poll-bar" style="width: 25%;"></div> 25%</div>
-            <div>Research: <div class="poll-bar" style="width: 20%;"></div> 20%</div>
-            <div>Productivity: <div class="poll-bar" style="width: 10%;"></div> 10%</div>
-            <div>Other: <div class="poll-bar" style="width: 5%;"></div> 5%</div>
+            <div class="poll-result-item">
+                <span>Content Creation:</span>
+                <div class="poll-bar-container"><div class="poll-bar" style="width: 40%;"></div></div>
+                <span class="poll-percentage">40%</span>
+            </div>
+            <div class="poll-result-item">
+                <span>Coding Help:</span>
+                <div class="poll-bar-container"><div class="poll-bar" style="width: 25%;"></div></div>
+                <span class="poll-percentage">25%</span>
+            </div>
+            <div class="poll-result-item">
+                <span>Research:</span>
+                <div class="poll-bar-container"><div class="poll-bar" style="width: 20%;"></div></div>
+                <span class="poll-percentage">20%</span>
+            </div>
+            <div class="poll-result-item">
+                <span>Productivity:</span>
+                <div class="poll-bar-container"><div class="poll-bar" style="width: 10%;"></div></div>
+                <span class="poll-percentage">10%</span>
+            </div>
+            <div class="poll-result-item">
+                <span>Other:</span>
+                <div class="poll-bar-container"><div class="poll-bar" style="width: 5%;"></div></div>
+                <span class="poll-percentage">5%</span>
+            </div>
         </div>
     </div>
     
-    <!-- New Interactive Quiz -->
+    <!-- Improved Interactive Quiz -->
     <div class="container section interactive-quiz">
         <h2 class="section-title">AI Knowledge Quiz 2025</h2>
         <p class="quiz-question">What is the primary benefit of multimodal AI?</p>
         <div class="quiz-options">
-            <div class="quiz-option" onclick="checkQuiz('correct')">Processing multiple data types like text and images</div>
-            <div class="quiz-option" onclick="checkQuiz('wrong')">Only handling text inputs</div>
-            <div class="quiz-option" onclick="checkQuiz('wrong')">Increasing energy consumption</div>
-            <div class="quiz-option" onclick="checkQuiz('wrong')">Reducing AI capabilities</div>
+            <div class="quiz-option" data-correct="true" onclick="checkQuiz(this)">Processing multiple data types like text and images</div>
+            <div class="quiz-option" onclick="checkQuiz(this)">Only handling text inputs</div>
+            <div class="quiz-option" onclick="checkQuiz(this)">Increasing energy consumption</div>
+            <div class="quiz-option" onclick="checkQuiz(this)">Reducing AI capabilities</div>
         </div>
         <div class="quiz-result" id="quiz-result"></div>
     </div>
@@ -2572,7 +2629,7 @@
         <h3>Byte AI - Best Free AI Assistant 2025</h3>
         <p>Powered by UTHAKKAN | Created by Ajmal U K | The leading free AI tool transforming content creation, coding, research, and productivity in 2025 with generative AI, multimodal AI, and autonomous agents. Over 1.2M users worldwide.</p>
         
-        <div class="social-icons">
+        <div class="footer-links">
             <a href="/about">About Us</a>
             <a href="/blog">Blog</a>
             <a href="/privacy">Privacy Policy</a>
@@ -2701,67 +2758,53 @@
             "retina_detect": true
         });
         
-        // Chat functionality
+        // Function to send initial message to chat page via localStorage
+        function sendInitialMessage(message) {
+            if (message.trim()) {
+                localStorage.setItem('initialMessage', message);
+                window.location.href = '/chat';
+            }
+        }
+
+        // Textarea and button handling
         const chatInput = document.getElementById('chat-input');
         const sendButton = document.getElementById('sendButton');
-        
-        function sendMessage() {
-            const message = chatInput.value;
-            chatInput.value = "";
-            fetch('/send_message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: message })
-            })
-            .then(response => response.json())
-            .then(data => {
-                window.location.href = '/chat';
-            })
-            .catch(error => console.error('Error:', error));
-        }
-        
-        function redirectToChat(element) {
-            const text = element.innerText;
-            fetch('/send_message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: text })
-            })
-            .then(response => response.json())
-            .then(data => {
-                window.location.href = '/chat';
-            })
-            .catch(error => console.error('Error:', error));
-        }
-        
-        // Event listeners
-        document.querySelectorAll('.grid-item').forEach(item => {
-            item.onclick = function() {
-                redirectToChat(item);
-            };
+
+        sendButton.addEventListener('click', () => {
+            sendInitialMessage(chatInput.value);
         });
-        
-        document.querySelectorAll('.use-case li').forEach(item => {
-            item.onclick = function() {
-                redirectToChat(item);
-            };
-        });
-        
+
         chatInput.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' && !event.shiftKey) {
                 event.preventDefault();
-                sendMessage();
+                sendInitialMessage(chatInput.value);
             }
         });
-        
-        sendButton.addEventListener('click', () => {
-            sendMessage();
+
+        // Grid items handling
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.onclick = function() {
+                sendInitialMessage(item.innerText.trim());
+            };
         });
-        
+
+        // Use-case li handling (if any, assuming they have onclick in HTML, replace with this)
+        document.querySelectorAll('.use-case li').forEach(item => {
+            item.onclick = function() {
+                sendInitialMessage(item.innerText.trim());
+            };
+        });
+
+        window.demoGenerate = function() {
+                const input = document.getElementById('demo-input').value.toLowerCase();
+                const output = document.getElementById('demo-output');
+                if (input.trim()) {
+                    sendInitialMessage(input.trim());
+                } else {
+                    output.innerHTML = 'Please enter a prompt to generate a response.';
+                }
+        };
+
         // Textarea auto-resize
         chatInput.addEventListener("input", () => {
             chatInput.style.height = "60px";
@@ -2824,42 +2867,31 @@
                 showSlide(currentSlide);
             }, 5000);
             
-            // Demo functionality with enhanced responses
-            window.demoGenerate = function() {
-                const input = document.getElementById('demo-input').value.toLowerCase();
-                const output = document.getElementById('demo-output');
-                if (input.trim()) {
-                    let response = `AI Response: Here's a sample response to "${input}". `;
-                    if (input.includes('ai trends 2025')) {
-                        response += 'Key AI trends 2025 include generative AI advancements, multimodal integration, autonomous agents becoming mainstream, emphasis on ethical AI governance, and sustainable AI practices to reduce environmental impact. Byte AI leads in all these areas.';
-                    } else if (input.includes('code')) {
-                        response += 'Sample Python code: def hello_world(): print("Hello, AI World!")';
-                    } else {
-                        response += 'In a real session, Byte AI would generate detailed, context-aware content using advanced models.';
-                    }
-                    output.innerHTML = response;
-                } else {
-                    output.innerHTML = 'Please enter a prompt to generate a response.';
-                }
-            };
-            
             // Poll functionality
             window.votePoll = function(option) {
+                const options = document.querySelectorAll('.poll-option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                options[option].classList.add('selected');
                 document.getElementById('poll-results').style.display = 'block';
                 // Simulate vote - in real would send to server
                 alert('Thank you for voting!');
             };
             
             // Quiz functionality
-            window.checkQuiz = function(answer) {
+            window.checkQuiz = function(element) {
+                const options = document.querySelectorAll('.quiz-option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                element.classList.add('selected');
                 const result = document.getElementById('quiz-result');
                 result.style.display = 'block';
-                if (answer === 'correct') {
+                if (element.getAttribute('data-correct') === 'true') {
                     result.innerHTML = 'Correct! Multimodal AI processes multiple data types for richer interactions.';
-                    result.style.color = 'green';
+                    result.classList.add('correct');
+                    result.classList.remove('incorrect');
                 } else {
                     result.innerHTML = 'Incorrect. The correct answer is processing multiple data types.';
-                    result.style.color = 'red';
+                    result.classList.add('incorrect');
+                    result.classList.remove('correct');
                 }
             };
         });

@@ -3462,6 +3462,16 @@ pre {
                 themeSelector.value = savedTheme;
                 applyTheme(savedTheme);
                 initializeChatSessions();
+                const initialMessage = localStorage.getItem('initialMessage');
+                if (initialMessage) {
+                    prepareNewChat();
+                    currentUserMessage = initialMessage.trim();
+                    localStorage.removeItem('initialMessage');
+                    if (currentUserMessage) {
+                        handleOutgoingMessage();
+                        setTimeout(() => displayLoadingAnimation({}), 500);
+                    }
+                }
                 const defaultImage = "../static/images/user.webp";
                 const profileImagePreview = document.getElementById("profileImagePreview");
                 const userProfileIcon = document.getElementById("userProfileIcon");
