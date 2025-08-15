@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Byte AI Blog — Latest AI Trends, Tools & Insights (2025)</title>
+  <meta name="description" content="Byte AI Blog: practical posts on AI engineering, product, security and evaluation in 2025.">
+  <meta name="keywords" content="AI blog, RAG, agents, edge AI, MLops, AI security, Byte AI">
+  <meta name="author" content="Ajmal U K">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://byteai.pythonanywhere.com/blog">
+
+  <meta property="og:title" content="Byte AI Blog — Latest AI Trends, Tools & Insights (2025)">
+  <meta property="og:description" content="Practical posts on AI engineering and product lessons.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://byteai.pythonanywhere.com/blog">
+  <meta property="og:image" content="https://byteai.pythonanywhere.com/static/images/byte-ai-social.jpg">
+
+  <link rel="icon" type="image/png" href="https://byteai.pythonanywhere.com/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="https://byteai.pythonanywhere.com/favicon.svg">
+	<link rel="shortcut icon" href="https://byteai.pythonanywhere.com/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://byteai.pythonanywhere.com/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-title" content="Byte">
+	<link rel="manifest" href="https://byteai.pythonanywhere.com/site.webmanifest">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Byte AI Blog — Latest AI Trends (2025)">
+  <meta name="twitter:description" content="Practical posts on AI engineering and product lessons.">
+  <meta name="twitter:image" content="https://byteai.pythonanywhere.com/static/images/byte-ai-social.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676"
+          crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #6c757d;
+      --accent: #0066ff;
+      --border: #e9ecef;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius: 12px;
+      --max-width: 1200px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --card: #1f1f1f;
+      --text: #e6e6e6;
+      --text-muted: #999999;
+      --accent: #4d94ff;
+      --border: #2a2a2a;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+      --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --card: #1f1f1f;
+        --text: #e6e6e6;
+        --text-muted: #999999;
+        --accent: #4d94ff;
+        --border: #2a2a2a;
+        --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+        --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+      }
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header */
+    .header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.8);
+    }
+
+    [data-theme="dark"] .header {
+      background: rgba(31,31,31,0.9);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent), #0052cc);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: white;
+    }
+
+    .site-name {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* Ad Container */
+    .ad-container {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Posts Grid */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Post Card */
+    .post-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--surface);
+    }
+
+    .post-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .post-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .post-title a:hover {
+      color: var(--accent);
+    }
+
+    .post-excerpt {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .author-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #0052cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .read-time {
+      margin-left: auto;
+    }
+
+    /* Featured Post (First Card) */
+    .post-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-height: 400px;
+    }
+
+    .post-card.featured .post-image {
+      height: 100%;
+    }
+
+    .post-card.featured .post-content {
+      padding: 2rem;
+      justify-content: center;
+    }
+
+    .post-card.featured .post-title {
+      font-size: 2rem;
+    }
+
+    .post-card.featured .post-excerpt {
+      font-size: 1rem;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 2rem auto 0;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .newsletter-button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .newsletter-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--surface);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .post-card.featured {
+        grid-template-columns: 1fr;
+        max-height: none;
+      }
+
+      .post-card.featured .post-image {
+        height: 200px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .ad-container {
+        margin: 1.5rem -1.5rem;
+        border-radius: 0;
+      }
+    }
+
+    /* In-feed ad styles */
+    .infeed-ad {
+      grid-column: 1 / -1;
+      margin: 0;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1rem;
+      min-height: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .infeed-ad {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://byteai.pythonanywhere.com/#org",
+        "name": "Byte AI",
+        "url": "https://byteai.pythonanywhere.com/",
+        "logo": "https://byteai.pythonanywhere.com/static/images/byte-ai-logo.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://byteai.pythonanywhere.com/#website",
+        "url": "https://byteai.pythonanywhere.com/",
+        "name": "Byte AI",
+        "publisher": {"@id": "https://byteai.pythonanywhere.com/#org"}
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://byteai.pythonanywhere.com/blog/#blog",
+        "name": "Byte AI Blog",
+        "description": "Practical posts on AI engineering, product & security",
+        "url": "https://byteai.pythonanywhere.com/blog",
+        "publisher": {"@id": "https://byteai.pythonanywhere.com/#org"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://byteai.pythonanywhere.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://byteai.pythonanywhere.com/blog"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Posts Data -->
+  <script id="posts-data" type="application/json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Open Weights vs Closed Models: 2025 Reality Check",
+          "url": "/blog/open-weights-vs-closed-models-2025",
+          "datePublished": "2025-08-13",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "What developers actually ship in 2025: open-weight stacks, licensing gotchas, and where closed APIs still win.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/open-weights-vs-closed-models-2025.png",
+          "keywords": "LLMs, open weights, governance, benchmarking",
+          "timeRequired": "PT7M",
+          "wordCount": 1200
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Top AI Trends to Watch in 2025",
+          "url": "/blog/top-ai-trends-2025",
+          "datePublished": "2025-01-15",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "From multimodal models to on-device intelligence and safer AI governance, here are the big shifts shaping 2025.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/top-ai-trends-2025.png",
+          "keywords": "multimodal, agents, governance, on-device",
+          "timeRequired": "PT7M",
+          "wordCount": 1100
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Agents That Don't Break: Production Patterns",
+          "url": "/blog/reliable-agents-production-patterns",
+          "datePublished": "2025-07-22",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Retries, tool timeouts, circuit breakers, and guardrails that make agent systems practical.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/reliable-agents-production-patterns.png",
+          "keywords": "agents, tooling, orchestration, evals",
+          "timeRequired": "PT9M",
+          "wordCount": 1500
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "RAG in 2025: Small, Fast, and Cheap",
+          "url": "/blog/rag-2025-small-fast-cheap",
+          "datePublished": "2025-06-12",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Modern RAG = smart chunking, compression, hybrid search, and lightweight rerankers.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/rag-2025-small-fast-cheap.png",
+          "keywords": "RAG, vector DB, rerankers, compression",
+          "timeRequired": "PT8M",
+          "wordCount": 1300
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "On-Device AI: Edge Copilots for Real Work",
+          "url": "/blog/edge-on-device-copilots",
+          "datePublished": "2025-05-28",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Latency, privacy, and cost make edge AI a no-brainer—if you optimize right.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/edge-on-device-copilots.png",
+          "keywords": "edge, quantization, privacy, battery",
+          "timeRequired": "PT7M",
+          "wordCount": 1200
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Healthcare AI 2025: Diagnostics Without Drama",
+          "url": "/blog/ai-healthcare-innovations",
+          "datePublished": "2025-06-01",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "How AI copilots help with diagnostics, triage, and care coordination while preserving privacy.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/ai-healthcare-innovations.png",
+          "keywords": "healthcare, privacy, triage, regulation",
+          "timeRequired": "PT8M",
+          "wordCount": 1400
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Security Hardening for LLM Apps",
+          "url": "/blog/llm-security-hardening",
+          "datePublished": "2025-07-09",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "From prompt injection to supply-chain tampering—practical defenses you can ship today.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/llm-security-hardening.png",
+          "keywords": "prompt injection, e2e logging, secrets, supply chain",
+          "timeRequired": "PT10M",
+          "wordCount": 1700
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Teaching with AI: 7 Patterns That Work",
+          "url": "/blog/teaching-with-ai-patterns",
+          "datePublished": "2025-04-19",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Use AI for feedback, scaffolding, and rubrics—without killing critical thinking.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/teaching-with-ai-patterns.png",
+          "keywords": "learning science, rubrics, feedback, plagiarism",
+          "timeRequired": "PT6M",
+          "wordCount": 1000
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Finance Copilots: Guardrails Before Gains",
+          "url": "/blog/finance-copilots-guardrails",
+          "datePublished": "2025-03-10",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Guardrails, auditability, and explanation quality matter more than raw IQ in finance AI.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/finance-copilots-guardrails.png",
+          "keywords": "risk, auditing, explanations, compliance",
+          "timeRequired": "PT8M",
+          "wordCount": 1300
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Legal Tech AI: Contracts You Can Trust",
+          "url": "/blog/legal-tech-contracts-trust",
+          "datePublished": "2025-02-22",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Structured drafting, clause libraries, and evidence links for defensible automation.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/legal-tech-contracts-trust.png",
+          "keywords": "contracts, LLMs, verification, traceability",
+          "timeRequired": "PT7M",
+          "wordCount": 1200
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Multimodal Benchmarks: What Actually Predicts UX",
+          "url": "/blog/multimodal-benchmarks-predict-ux",
+          "datePublished": "2025-07-30",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Why single-number scores mislead—and what proxy tasks map to user delight.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/multimodal-benchmarks-predict-ux.png",
+          "keywords": "benchmarks, evaluation, multimodal, UX",
+          "timeRequired": "PT9M",
+          "wordCount": 1500
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Climate Tech + AI: Models that Matter",
+          "url": "/blog/climate-tech-ai-models-that-matter",
+          "datePublished": "2025-05-07",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "From grid optimization to satellite sensing—AI that actually reduces emissions.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/climate-tech-ai-models-that-matter.png",
+          "keywords": "forecast, optimization, policy, satellite",
+          "timeRequired": "PT8M",
+          "wordCount": 1400
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Gemini for Images: Product Photo Workflows",
+          "url": "/blog/gemini-product-photo-workflows",
+          "datePublished": "2025-06-26",
+          "author": {"@type": "Person", "name": "Ajmal U K"},
+          "description": "Consistent SKUs, relighting, and style sets—without a full studio.",
+          "image": "https://ik.imagekit.io/uthakkan/ByteAI/Blog/gemini-product-photo-workflows.png",
+          "keywords": "image gen, ecommerce, lighting, consistency",
+          "timeRequired": "PT7M",
+          "wordCount": 1200
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo">BA</div>
+        <div class="site-name">Byte AI</div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle">🌙 Dark</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>In-depth resource on AI, ML and everything in between.</h1>
+    <p class="hero-tagline">A modern and customizable Blogger theme for publications, blogs, journals and more.</p>
+    <p class="hero-meta">13 articles by Ajmal U K</p>
+  </section>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Top Ad (Display) -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5477043556031676"
+           data-ad-slot="1907067246"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Multiplex Ad -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-5477043556031676"
+           data-ad-slot="5654740566"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="posts-grid">
+      <!-- Featured Post -->
+      <article class="post-card featured">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/open-weights-vs-closed-models-2025.png" alt="Open Weights vs Closed Models" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">LLMs</div>
+          <h2 class="post-title">
+            <a href="/blog/open-weights-vs-closed-models-2025">Open Weights vs Closed Models: 2025 Reality Check</a>
+          </h2>
+          <p class="post-excerpt">What developers actually ship in 2025: open-weight stacks, licensing gotchas, and where closed APIs still win.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-08-13">Aug 13, 2025</time>
+            <span class="read-time">7 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Regular Posts -->
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/top-ai-trends-2025.png" alt="Top AI Trends 2025" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Trends</div>
+          <h2 class="post-title">
+            <a href="/blog/top-ai-trends-2025">Top AI Trends to Watch in 2025</a>
+          </h2>
+          <p class="post-excerpt">From multimodal models to on-device intelligence and safer AI governance.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-01-15">Jan 15, 2025</time>
+            <span class="read-time">7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/reliable-agents-production-patterns.png" alt="Agents That Don't Break" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Agents</div>
+          <h2 class="post-title">
+            <a href="/blog/reliable-agents-production-patterns">Agents That Don't Break: Production Patterns</a>
+          </h2>
+          <p class="post-excerpt">Retries, tool timeouts, circuit breakers, and guardrails that make agent systems practical.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-07-22">Jul 22, 2025</time>
+            <span class="read-time">9 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/rag-2025-small-fast-cheap.png" alt="RAG in 2025" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">RAG</div>
+          <h2 class="post-title">
+            <a href="/blog/rag-2025-small-fast-cheap">RAG in 2025: Small, Fast, and Cheap</a>
+          </h2>
+          <p class="post-excerpt">Modern RAG = smart chunking, compression, hybrid search, and lightweight rerankers.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-06-12">Jun 12, 2025</time>
+            <span class="read-time">8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- In-feed Ad after 3 posts -->
+      <div class="infeed-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-6t+ed+2i-1n-4w"
+             data-ad-client="ca-pub-5477043556031676"
+             data-ad-slot="2862692742"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/edge-on-device-copilots.png" alt="Edge Copilots" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Edge AI</div>
+          <h2 class="post-title">
+            <a href="/blog/edge-on-device-copilots">On-Device AI: Edge Copilots for Real Work</a>
+          </h2>
+          <p class="post-excerpt">Latency, privacy, and cost make edge AI a no-brainer—if you optimize right.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-05-28">May 28, 2025</time>
+            <span class="read-time">7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/ai-healthcare-innovations.png" alt="Healthcare AI" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Healthcare</div>
+          <h2 class="post-title">
+            <a href="/blog/ai-healthcare-innovations">Healthcare AI 2025: Diagnostics Without Drama</a>
+          </h2>
+          <p class="post-excerpt">How AI copilots help with diagnostics, triage, and care coordination.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-06-01">Jun 01, 2025</time>
+            <span class="read-time">8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/llm-security-hardening.png" alt="LLM Security" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Security</div>
+          <h2 class="post-title">
+            <a href="/blog/llm-security-hardening">Security Hardening for LLM Apps</a>
+          </h2>
+          <p class="post-excerpt">From prompt injection to supply-chain tampering—practical defenses you can ship today.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-07-09">Jul 09, 2025</time>
+            <span class="read-time">10 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- In-feed Ad after 6 posts -->
+      <div class="infeed-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-6t+ed+2i-1n-4w"
+             data-ad-client="ca-pub-5477043556031676"
+             data-ad-slot="2862692742"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/teaching-with-ai-patterns.png" alt="Teaching with AI" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Education</div>
+          <h2 class="post-title">
+            <a href="/blog/teaching-with-ai-patterns">Teaching with AI: 7 Patterns That Work</a>
+          </h2>
+          <p class="post-excerpt">Use AI for feedback, scaffolding, and rubrics—without killing critical thinking.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-04-19">Apr 19, 2025</time>
+            <span class="read-time">6 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/finance-copilots-guardrails.png" alt="Finance Copilots" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Finance</div>
+          <h2 class="post-title">
+            <a href="/blog/finance-copilots-guardrails">Finance Copilots: Guardrails Before Gains</a>
+          </h2>
+          <p class="post-excerpt">Guardrails, auditability, and explanation quality matter more than raw IQ.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-03-10">Mar 10, 2025</time>
+            <span class="read-time">8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/legal-tech-contracts-trust.png" alt="Legal Tech" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Legal</div>
+          <h2 class="post-title">
+            <a href="/blog/legal-tech-contracts-trust">Legal Tech AI: Contracts You Can Trust</a>
+          </h2>
+          <p class="post-excerpt">Structured drafting, clause libraries, and evidence links for defensible automation.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-02-22">Feb 22, 2025</time>
+            <span class="read-time">7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- In-article Ad -->
+      <div class="infeed-ad">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-5477043556031676"
+             data-ad-slot="1161478703"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/multimodal-benchmarks-predict-ux.png" alt="Multimodal Benchmarks" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Benchmarks</div>
+          <h2 class="post-title">
+            <a href="/blog/multimodal-benchmarks-predict-ux">Multimodal Benchmarks: What Actually Predicts UX</a>
+          </h2>
+          <p class="post-excerpt">Why single-number scores mislead—and what proxy tasks map to user delight.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-07-30">Jul 30, 2025</time>
+            <span class="read-time">9 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/climate-tech-ai-models-that-matter.png" alt="Climate Tech AI" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Climate Tech</div>
+          <h2 class="post-title">
+            <a href="/blog/climate-tech-ai-models-that-matter">Climate Tech + AI: Models that Matter</a>
+          </h2>
+          <p class="post-excerpt">From grid optimization to satellite sensing—AI that actually reduces emissions.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-05-07">May 07, 2025</time>
+            <span class="read-time">8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img class="post-image" src="https://ik.imagekit.io/uthakkan/ByteAI/Blog/gemini-product-photo-workflows.png" alt="Gemini Product Photos" loading="lazy">
+        <div class="post-content">
+          <div class="post-category">Image Generation</div>
+          <h2 class="post-title">
+            <a href="/blog/gemini-product-photo-workflows">Gemini for Images: Product Photo Workflows</a>
+          </h2>
+          <p class="post-excerpt">Consistent SKUs, relighting, and style sets—without a full studio.</p>
+          <div class="post-meta">
+            <div class="author-info">
+              <div class="author-avatar">AJ</div>
+              <span>Ajmal U K</span>
+            </div>
+            <time datetime="2025-06-26">Jun 26, 2025</time>
+            <span class="read-time">7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- In-feed Ad after all posts -->
+      <div class="infeed-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-6t+ed+2i-1n-4w"
+             data-ad-client="ca-pub-5477043556031676"
+             data-ad-slot="2862692742"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <h2>Stay Updated with Byte AI</h2>
+      <p class="hero-tagline">Subscribe for the latest AI trends, tools, and insights.</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Multiplex Ad -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-5477043556031676"
+           data-ad-slot="5654740566"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo-area">
+        <div class="logo">BA</div>
+        <div class="site-name">Byte AI</div>
+      </div>
+      <p>© 2025 Byte AI. All rights reserved.</p>
+      <div class="footer-links">
+         <a href="/">Home</a>
+	            <a href="/about-us">About Us</a>
+	            <a href="/blog">Blog</a>
+	            <a href="/privacy-policy">Privacy Policy</a>
+	            <a href="/terms-of-service">Terms of Service</a>
+	            <a href="/contact-us">Contact</a>
+	            <a href="/faq">FAQ</a>
+	            <a href="/download-apk">Download App</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+      localStorage.setItem('theme', newTheme);
+    });
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    } else if (prefersDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️ Light';
+    }
+  </script>
+</body>
+</html>

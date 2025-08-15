@@ -22,12 +22,12 @@
     <meta name="twitter:description" content="Chat with Byte Ai, a free, privacy-first AI chatbot for coding, writing, and productivity. No sign-up needed. Powered by advanced AI models. Improved performance and features.">
     <meta name="twitter:image" content="https://byteai.pythonanywhere.com/static/images/byteai-chat-twitter.jpg">
     <meta name="twitter:site" content="@TimeLoad7">
-    <link rel="icon" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/svg+xml" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon.svg">
-    <link rel="apple-touch-icon" href="https://byteai.pythonanywhere.com/static/images/Favicon/apple-touch-icon.png">
-    <link rel="manifest" href="https://byteai.pythonanywhere.com/static/images/Favicon/site.webmanifest">
-    <meta name="msapplication-TileImage" content="https://byteai.pythonanywhere.com/static/images/Favicon/favicon-96x96.png">
-    <meta name="theme-color" content="#6C63FF">
+    <link rel="icon" type="image/png" href="https://byteai.pythonanywhere.com/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="https://byteai.pythonanywhere.com/favicon.svg">
+	<link rel="shortcut icon" href="https://byteai.pythonanywhere.com/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://byteai.pythonanywhere.com/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-title" content="Byte">
+	<link rel="manifest" href="https://byteai.pythonanywhere.com/site.webmanifest">
     <link rel="preload" href="https://byteai.pythonanywhere.com/static/images/byteai-chat.jpg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,13 +80,13 @@
             "founder": {
                 "@type": "Person",
                 "name": "Muhammed Ajmal U K",
-                "url": "https://byteai.pythonanywhere.com/about"
+                "url": "https://byteai.pythonanywhere.com/about-us"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "Customer Support",
                 "email": "contact.byteai@gmail.com",
-                "url": "https://byteai.pythonanywhere.com/contact"
+                "url": "https://byteai.pythonanywhere.com/contact-us"
             },
             "sameAs": [
                 "https://x.com/TimeLoad7"
@@ -5504,7 +5504,7 @@ const messageElement = editIcon.closest('.message--outgoing');
             })).then(() => {
                 console.log("Cache cleared successfully.");
                 showToast('Cache cleared successfully', 'success');
-                // Optional: window.location.reload(); // Add if refresh is desired
+                // Optional: window.location.reload();
             }).catch(err => {
                 console.error('Error while clearing caches:', err);
                 showToast('Failed to clear cache', 'error');

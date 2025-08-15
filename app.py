@@ -237,6 +237,161 @@ def index():
 def chat():
     return render_template('chat.html')
 
+@app.route('/privacy-policy')
+def privacy():
+    return render_template('privacy.html')
+
+@app.route('/about-us')
+def about():
+    return render_template('about.html')
+
+@app.route('/privacy-policy')
+def privacy():
+    return render_template('privacy.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/terms-of-service')
+def terms():
+    return render_template('terms.html')
+
+@app.route('/contact-us')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+@app.route('/download-apk')
+def download_apk():
+    return render_template('download-apk.html')
+
+
+
+@app.route('/open-weights-vs-closed-models-2025')
+def blog1():
+    return render_template('open-weights-vs-closed-models-2025.html')
+
+@app.route('/top-ai-trends-2025')
+def blog2():
+    return render_template('top-ai-trends-2025.html')
+
+@app.route('/reliable-agents-production-patterns')
+def blog3():
+    return render_template('reliable-agents-production-patterns.html')
+
+@app.route('/rag-2025-small-fast-cheap')
+def blog4():
+    return render_template('rag-2025-small-fast-cheap.html')
+
+@app.route('/edge-on-device-copilots')
+def blog5():
+    return render_template('edge-on-device-copilots.html')
+
+@app.route('/ai-healthcare-innovations')
+def blog6():
+    return render_template('ai-healthcare-innovations.html')
+
+@app.route('/llm-security-hardening')
+def blog7():
+    return render_template('llm-security-hardening.html')
+
+@app.route('/teaching-with-ai-patterns')
+def blog8():
+    return render_template('teaching-with-ai-patterns.html')
+
+@app.route('/finance-copilots-guardrails')
+def blog9():
+    return render_template('finance-copilots-guardrails.html')
+
+@app.route('/legal-tech-contracts-trust')
+def blog10():
+    return render_template('legal-tech-contracts-trust.html')
+
+@app.route('/multimodal-benchmarks-predict-ux')
+def blog11():
+    return render_template('multimodal-benchmarks-predict-ux.html')
+
+
+@app.route('/climate-tech-ai-models-that-matter')
+def blog12():
+    return render_template('climate-tech-ai-models-that-matter.html')
+
+
+@app.route('/gemini-product-photo-workflows')
+def blog13():
+    return render_template('gemini-product-photo-workflows.html')
+
+
+# Asset routes
+@app.route('/google83f8616f6a5b1974.html')
+def google_verification():
+    return send_from_directory('static', 'google83f8616f6a5b1974.html')
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
+
+@app.route('/ads.txt')
+def ads():
+    return send_from_directory('static', 'ads.txt')
+
+@app.route('/logo.png')
+def logo():
+    return send_from_directory('static/images', 'logo.png')
+
+@app.route('/og-image.jpg')
+def og_image():
+    return send_from_directory('static/images', 'og-image.jpg')
+
+@app.route('/twitter-image.jpg')
+def twitter_image():
+    return send_from_directory('static/images', 'twitter-image.jpg')
+
+@app.route('/byte-ai-social.jpg')
+def social():
+    return send_from_directory('static/images', 'byte-ai-social.jpg')
+
+
+
+
+
+# Favicon routes
+@app.route('/favicon.ico')
+def favicon_ico():
+    return send_from_directory('static/images/Favicon', 'favicon.ico')
+
+@app.route('/favicon.svg')
+def favicon_svg():
+    return send_from_directory('static/images/Favicon', 'favicon.svg')
+
+@app.route('/favicon-96x96.png')
+def favicon_96():
+    return send_from_directory('static/images/Favicon', 'favicon-96x96.png')
+
+@app.route('/web-app-manifest-192x192.png')
+def web_app_manifest_192():
+    return send_from_directory('static/images/Favicon', 'web-app-manifest-192x192.png')
+
+@app.route('/web-app-manifest-512x512.png')
+def web_app_manifest_512():
+    return send_from_directory('static/images/Favicon', 'web-app-manifest-512x512.png')
+
+@app.route('/apple-touch-icon.png')
+def apple_icon():
+    return send_from_directory('static/images/Favicon', 'apple-touch-icon.png')
+
+@app.route('/site.webmanifest')
+def webmanifest():
+    return send_from_directory('static/images/Favicon', 'site.webmanifest')
+
+
+
+
+
 @app.route('/predict', methods=['POST'])
 def ByteAi():
     try:

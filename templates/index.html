@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="TL-CIRDOwMKS3eXdiir_f0Nyqp-3cdDvtFPep3sRytw">
-    <meta name="msvalidate.01" content="BD9DAA51530268B246570B7DB52E1579">
-    <meta name="google-adsense-account" content="ca-pub-5477043556031676">
     <meta name="description" content="Byte AI - Best free AI assistant 2025 for content creation, coding help, research, and productivity. No sign-up required. Advanced AI chatbot alternative to ChatGPT, Gemini, and DeepSeek powered by UTHAKKAN. Free AI tools for developers, writers, students, and businesses. Discover 2025 AI trends like generative AI, multimodal AI, autonomous agents, ethical AI, and sustainable AI.">
     <meta name="keywords" content="Byte AI, best AI assistant 2025, free AI chatbot, AI content generator, AI coding assistant, AI research tool, AI productivity assistant, ChatGPT alternative 2025, Gemini alternative, DeepSeek alternative, free AI tools, artificial intelligence assistant, machine learning chatbot, NLP AI, creative AI writing, programming AI help, AI for developers, AI for writers, AI for students, AI for business, AI trends 2025, generative AI, multimodal AI, ethical AI, AI agents 2025, sustainable AI, AI comparison 2025, best free AI tools 2025">
     <meta name="author" content="Ajmal U K">
@@ -23,16 +20,13 @@
     <meta name="twitter:description" content="Advanced free AI chatbot for content generation, coding assistance, research tools, and productivity enhancement. Top alternative to ChatGPT, Gemini, and DeepSeek in 2025 with AI trends like autonomous agents, multimodal AI, ethical AI, and sustainable AI.">
     <meta name="twitter:image" content="https://byteai.pythonanywhere.com/static/images/byte-ai-social.jpg">
     <link rel="canonical" href="https://byteai.pythonanywhere.com/">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://byteai.pythonanywhere.com/static/images/Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://byteai.pythonanywhere.com/static/images/Favicon/favicon-16x16.png">
-    <link rel="manifest" href="https://byteai.pythonanywhere.com/static/images/Favicon/site.webmanifest">
-    <link rel="mask-icon" href="https://byteai.pythonanywhere.com/static/images/Favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
+    <link rel="icon" type="image/png" href="https://byteai.pythonanywhere.com/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="https://byteai.pythonanywhere.com/favicon.svg">
+	<link rel="shortcut icon" href="https://byteai.pythonanywhere.com/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://byteai.pythonanywhere.com/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-title" content="Byte">
+	<link rel="manifest" href="https://byteai.pythonanywhere.com/site.webmanifest">
     <title>Byte AI - Best Free AI Assistant 2025 for Content, Coding & Research | Top ChatGPT Alternative</title>
-    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,14 +53,12 @@
       },
       "featureList": [
         "AI-powered chat",
-        "Code generation",
-        "Content writing",
+        "Image generation",
+        "Web search",
+        "Advanced reasoning",
+        "No login required",
         "Privacy-first design",
         "Customizable themes",
-        "Chat history management",
-        "Image generation",
-        "Code preview",
-        "System theme integration",
         "Multimodal AI",
         "Autonomous agents",
         "Ethical AI governance",
@@ -74,7 +66,6 @@
         "Voice-to-text conversion",
         "Real-time collaboration",
         "AI-driven analytics",
-        "Custom AI models",
         "Integration with third-party apps"
       ],
       "review": [
@@ -105,8 +96,6 @@
       ]
     }
     </script>
-    
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
@@ -114,16 +103,35 @@
         :root {
             --primary-color: #4facfe;
             --secondary-color: #00f2fe;
-            --dark-bg: #0D0D0D;
-            --card-bg: #1A1A1A;
-            --text-primary: #FFFFFF;
-            --text-secondary: #A5A5A5;
-            --accent: #333333;
             --gradient: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            --card-hover: #222;
             --transition: all 0.3s ease;
         }
-        
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #f8f9fa;
+                --card-bg: #ffffff;
+                --text-primary: #1a1a1a;
+                --text-secondary: #6c757d;
+                --accent: #e9ecef;
+                --card-hover: #f0f4f8;
+                --shadow-color: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        /* Dark theme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --text-primary: #ffffff;
+                --text-secondary: #a5a5a5;
+                --accent: #333333;
+                --card-hover: #252525;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -132,7 +140,7 @@
         }
         
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--bg-color);
             color: var(--text-primary);
             display: flex;
             flex-direction: column;
@@ -149,86 +157,103 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
-            opacity: 0.3;
+            background: radial-gradient(circle at center, rgba(79, 172, 254, 0.05) 0%, transparent 70%);
+            opacity: 0.8;
             z-index: -2;
         }
         
         .container {
             width: 100%;
-            max-width: 1200px;
-            padding: 0 20px;
+            max-width: 1280px;
+            padding: 0 24px;
             margin: 0 auto;
         }
         
         /* Header Styles */
         .header {
             text-align: center;
-            padding: 100px 20px 80px;
+            padding: 80px 20px 60px;
             position: relative;
             z-index: 10;
             width: 100%;
         }
         
         .header h1 {
-            font-size: 4rem;
-            margin-bottom: 25px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-weight: 800;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
+            text-shadow: 0 1px 3px var(--shadow-color);
+        }
+
+        .header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 0 1px 3px var(--shadow-color);
         }
         
         .header p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 50px;
-            max-width: 900px;
+            margin-bottom: 40px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            opacity: 0.85;
         }
         
         .textarea-container {
             position: relative;
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 720px;
+            margin: 0 auto 32px;
         }
         
         .prompt__form-input {
-            height: 65px;
-            max-height: 225px;
-            min-height: 3rem;
+            height: 56px;
+            max-height: 200px;
+            min-height: 56px;
             width: 100%;
             overflow-y: auto;
-            border: none;
+            border: 1px solid var(--accent);
             resize: none;
             font-size: 1rem;
-            padding: 1rem 3rem 1rem 1rem;
-            padding-right: 4.5rem;
-            border-radius: 50px;
+            padding: 16px 56px 16px 20px;
+            border-radius: 28px;
             background: var(--card-bg);
             color: var(--text-primary);
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition), box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .prompt__form-input:focus {
-            background: var(--card-bg);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+            border-color: var(--primary-color);
         }
         
         .prompt__form-input::placeholder {
             color: var(--text-secondary);
+            opacity: 0.7;
         }
         
         .prompt__form-input::-webkit-scrollbar {
-            display: none;
+            width: 6px;
+        }
+        
+        .prompt__form-input::-webkit-scrollbar-thumb {
+            background-color: var(--accent);
+            border-radius: 3px;
         }
         
         .prompt__form-button {
@@ -236,21 +261,21 @@
             border: none;
             top: 50%;
             transform: translateY(-50%);
-            right: 1rem;
-            width: 46px;
-            height: 46px;
+            right: 8px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             border-radius: 50%;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-bg);
+            color: #ffffff;
             background: var(--gradient);
-            transition: var(--transition);
-            opacity: 0.5;
+            transition: var(--transition), opacity 0.2s;
+            opacity: 0.6;
             pointer-events: none;
-            box-shadow: 0 2px 10px rgba(79, 172, 254, 0.4);
+            box-shadow: 0 1px 5px rgba(79, 172, 254, 0.3);
         }
         
         .prompt__form-input:valid ~ #sendButton {
@@ -260,179 +285,161 @@
         
         .prompt__form-button:hover {
             transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.6);
+            box-shadow: 0 2px 10px rgba(79, 172, 254, 0.4);
         }
         
         .header-buttons {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .button {
-            padding: 14px 28px;
-            background-color: var(--text-primary);
-            color: var(--dark-bg);
+            padding: 12px 24px;
+            background: var(--gradient);
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 28px;
             font-weight: 600;
             transition: var(--transition);
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
         }
         
         .button i {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .download-button {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--text-primary);
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
             box-shadow: none;
         }
         
         .download-button:hover {
-            background-color: var(--text-primary);
-            color: var(--dark-bg);
+            background: var(--primary-color);
+            color: #ffffff;
         }
         
         /* Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
             position: relative;
         }
         
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 16px;
             text-align: center;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 3px var(--shadow-color);
         }
         
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-align: center;
-            max-width: 800px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            opacity: 0.85;
         }
         
-        /* Improved Grid Styles - Two rows, horizontal scroll, no visible scrollbar */
+        /* Improved Grid Styles */
         .grid-container {
             overflow-x: auto;
-            margin-top: 30px;
-            padding-bottom: 20px;
+            margin-top: 24px;
+            padding-bottom: 16px;
+            scrollbar-width: thin;
         }
         
         .grid {
             display: grid;
-            grid-template-rows: repeat(2, 1fr);
-            grid-auto-columns: minmax(250px, max-content);
-            grid-auto-flow: column;
-            gap: 15px;
-            width: max-content;
-        }
-        
-        .grid::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .grid {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
         }
         
         .grid-item {
             background-color: var(--card-bg);
-            padding: 24px;
+            padding: 20px;
             border-radius: 12px;
             color: var(--text-primary);
-            text-align: center;
-            font-size: 1rem;
+            text-align: left;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
-            min-height: 120px;
+            min-height: 80px;
             line-height: 1.5;
             transition: var(--transition);
             cursor: pointer;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .grid-item:hover {
             background-color: var(--card-hover);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .grid-item::after {
             content: "→";
             position: absolute;
-            right: 20px;
-            font-size: 1.2rem;
+            right: 16px;
+            font-size: 1rem;
             color: var(--primary-color);
             transition: var(--transition);
         }
         
         .grid-item:hover::after {
-            right: 15px;
+            right: 12px;
         }
         
         /* Features Styles */
         .features-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .feature-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px 30px;
+            border-radius: 12px;
+            padding: 32px 24px;
             transition: var(--transition);
             height: 100%;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.5s ease-out forwards;
             opacity: 0;
         }
         
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4) { animation-delay: 0.4s; }
-        .feature-card:nth-child(5) { animation-delay: 0.5s; }
-        .feature-card:nth-child(6) { animation-delay: 0.6s; }
-        .feature-card:nth-child(7) { animation-delay: 0.7s; }
-        .feature-card:nth-child(8) { animation-delay: 0.8s; }
+        .feature-card:nth-child(odd) { animation-delay: 0.1s; }
+        .feature-card:nth-child(even) { animation-delay: 0.3s; }
         
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(16px);
             }
             to {
                 opacity: 1;
@@ -441,13 +448,13 @@
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px var(--shadow-color);
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
@@ -455,32 +462,34 @@
         }
         
         .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--text-primary);
         }
         
         .feature-desc {
             color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        
+        /* Ad Container */
         .ad-container {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 30px;
-            margin: 40px 0;
+            padding: 16px;
+            margin: 32px 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
             position: relative;
+            max-width: 100%;
+            overflow: hidden;
         }
         
         .ad-label {
             color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-bottom: 15px;
+            font-size: 0.75rem;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
@@ -488,62 +497,62 @@
         
         .ad-container ins {
             display: block;
-            width: 50%;
-            min-height: 250px;
+            width: 100%;
+            min-height: 100px;
         }
         
         /* Sidebar Styles */
         .sidebar {
             position: fixed;
-            width: 300px;
+            width: 280px;
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 20px;
             z-index: 100;
-            display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            max-height: 95vh;
+            display: none;
+            box-shadow: 0 4px 16px var(--shadow-color);
+            max-height: 90vh;
             overflow-y: auto;
             top: 50%;
             transform: translateY(-50%);
         }
         
         .sidebar::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         
         .sidebar::-webkit-scrollbar-thumb {
             background-color: var(--accent);
-            border-radius: 4px;
+            border-radius: 3px;
         }
         
         #left-sidebar {
-            left: 20px;
+            left: 16px;
         }
         
         #right-sidebar {
-            right: 20px;
+            right: 16px;
         }
         
         .sidebar h3 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.4rem;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
         }
         
         .sidebar-content {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
         .close-sidebar {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 12px;
+            right: 12px;
             cursor: pointer;
             color: var(--text-secondary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: var(--transition);
         }
         
@@ -554,44 +563,45 @@
         /* Testimonials Styles */
         .testimonials {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .testimonial {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 24px;
             position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 0.6s ease-out forwards;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            animation: fadeInUp 0.5s ease-out forwards;
             opacity: 0;
         }
         
         .testimonial:nth-child(1) { animation-delay: 0.1s; }
-        .testimonial:nth-child(2) { animation-delay: 0.3s; }
-        .testimonial:nth-child(3) { animation-delay: 0.5s; }
-        .testimonial:nth-child(4) { animation-delay: 0.6s; }
-        .testimonial:nth-child(5) { animation-delay: 0.7s; }
+        .testimonial:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial:nth-child(5) { animation-delay: 0.5s; }
         
         .testimonial:before {
             content: "";
-            font-size: 80px;
+            font-size: 60px;
             color: var(--primary-color);
-            opacity: 0.2;
+            opacity: 0.15;
             position: absolute;
-            top: 10px;
-            left: 20px;
+            top: 8px;
+            left: 16px;
             font-family: Georgia, serif;
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
             z-index: 1;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .testimonial-author {
@@ -600,108 +610,103 @@
         }
         
         .author-avatar {
-            width: 60px;
-            height: 60px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background-color: var(--accent);
-            margin-right: 15px;
+            margin-right: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         
         .author-info h4 {
-            margin-bottom: 5px;
-            font-size: 1.1rem;
+            margin-bottom: 4px;
+            font-size: 1rem;
         }
         
         .author-info p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* Pricing Styles */
         .pricing-plans {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .pricing-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px 30px;
+            border-radius: 12px;
+            padding: 32px 24px;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
             height: 100%;
             display: flex;
             flex-direction: column;
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
         }
         
-        .pricing-card:nth-child(1) { animation-delay: 0.1s; }
-        .pricing-card:nth-child(2) { animation-delay: 0.2s; }
-        .pricing-card:nth-child(3) { animation-delay: 0.3s; }
-        
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px var(--shadow-color);
         }
         
         .pricing-card.popular {
             border: 2px solid var(--primary-color);
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         .popular-badge {
             position: absolute;
             top: 0;
-            right: 30px;
+            right: 24px;
             background-color: var(--primary-color);
-            color: var(--dark-bg);
-            padding: 5px 15px;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
+            color: #ffffff;
+            padding: 4px 12px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .plan-name {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
         }
         
         .plan-price {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
             color: var(--primary-color);
             font-weight: 700;
         }
         
         .plan-price span {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
         
         .plan-features {
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             text-align: left;
             flex-grow: 1;
         }
         
         .plan-features li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-secondary);
             list-style-type: none;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
+            font-size: 0.95rem;
         }
         
         .plan-features li:before {
@@ -721,39 +726,28 @@
         /* FAQ Styles */
         .faq-container {
             max-width: 800px;
-            margin: 50px auto 0;
+            margin: 40px auto 0;
         }
         
         .faq-item {
             background-color: var(--card-bg);
             border-radius: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 0.6s ease-out forwards;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            animation: fadeInUp 0.5s ease-out forwards;
             opacity: 0;
         }
         
-        .faq-item:nth-child(1) { animation-delay: 0.1s; }
-        .faq-item:nth-child(2) { animation-delay: 0.2s; }
-        .faq-item:nth-child(3) { animation-delay: 0.3s; }
-        .faq-item:nth-child(4) { animation-delay: 0.4s; }
-        .faq-item:nth-child(5) { animation-delay: 0.5s; }
-        .faq-item:nth-child(6) { animation-delay: 0.6s; }
-        .faq-item:nth-child(7) { animation-delay: 0.7s; }
-        .faq-item:nth-child(8) { animation-delay: 0.8s; }
-        .faq-item:nth-child(9) { animation-delay: 0.9s; }
-        .faq-item:nth-child(10) { animation-delay: 1.0s; }
-        
         .faq-question {
-            padding: 20px 25px;
+            padding: 16px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .faq-question:hover {
@@ -761,17 +755,18 @@
         }
         
         .faq-answer {
-            padding: 0 25px;
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .faq-item.active .faq-answer {
-            padding: 0 25px 25px;
-            max-height: 500px;
+            padding: 0 20px 20px;
+            max-height: 400px;
         }
         
         .faq-toggle {
@@ -787,27 +782,28 @@
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 40px;
+            margin-top: 32px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .comparison-table th, .comparison-table td {
-            padding: 18px 20px;
+            padding: 16px 20px;
             text-align: left;
             border-bottom: 1px solid var(--accent);
+            font-size: 0.95rem;
         }
         
         .comparison-table th {
             background-color: var(--card-bg);
             color: var(--primary-color);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .comparison-table tr:hover {
-            background-color: rgba(79, 172, 254, 0.05);
+            background-color: rgba(79, 172, 254, 0.03);
         }
         
         .checkmark {
@@ -822,61 +818,54 @@
         /* Stats Styles */
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .stat-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px 20px;
+            border-radius: 12px;
+            padding: 24px 16px;
             text-align: center;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 0.6s ease-out forwards;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            animation: fadeInUp 0.5s ease-out forwards;
             opacity: 0;
         }
         
-        .stat-card:nth-child(1) { animation-delay: 0.1s; }
-        .stat-card:nth-child(2) { animation-delay: 0.2s; }
-        .stat-card:nth-child(3) { animation-delay: 0.3s; }
-        .stat-card:nth-child(4) { animation-delay: 0.4s; }
-        .stat-card:nth-child(5) { animation-delay: 0.5s; }
-        .stat-card:nth-child(6) { animation-delay: 0.6s; }
-        
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .stat-label {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
         /* CTA Section Styles */
         .cta-section {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, var(--card-bg) 0%, var(--dark-bg) 100%);
-            border-radius: 20px;
-            margin: 60px auto;
-            max-width: 1200px;
+            padding: 60px 24px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
+            border-radius: 16px;
+            margin: 48px auto;
+            max-width: 960px;
             width: 95%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 16px var(--shadow-color);
         }
         
         .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 16px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
@@ -884,10 +873,10 @@
         }
         
         .cta-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 700px;
+            margin-bottom: 32px;
+            max-width: 640px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -896,39 +885,42 @@
         footer {
             background-color: var(--card-bg);
             width: 100%;
-            padding: 60px 20px 30px;
+            padding: 48px 24px 24px;
             text-align: center;
             color: var(--text-secondary);
-            margin-top: 40px;
+            margin-top: 32px;
             border-top: 1px solid var(--accent);
         }
         
         footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
             color: var(--text-primary);
         }
         
         footer p {
-            font-size: 0.95rem;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            max-width: 800px;
+            font-size: 0.9rem;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
         }
         
         footer .footer-links {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
         }
         
         footer .footer-links a {
             color: var(--text-primary);
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 500;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
         footer .footer-links a:hover {
@@ -937,18 +929,18 @@
         }
         
         footer .social-icons {
-            margin-top: 25px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
         }
         
         footer .social-icons a {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--text-secondary);
             background-color: var(--accent);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -957,9 +949,9 @@
         }
         
         footer .social-icons a:hover {
-            color: var(--text-primary);
+            color: #ffffff;
             background-color: var(--primary-color);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
         
         /* Particles Background */
@@ -970,13 +962,23 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background-color: var(--dark-bg);
+            background-color: var(--bg-color);
         }
         
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+        
         @media (max-width: 992px) {
             .header h1 {
                 font-size: 2.8rem;
+            }
+
+            .header h2 {
+                font-size: 1.6rem;
             }
             
             .section-title {
@@ -990,11 +992,15 @@
         
         @media (max-width: 768px) {
             .header {
-                padding: 60px 20px 40px;
+                padding: 60px 16px 40px;
             }
             
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .header h2 {
+                font-size: 1.4rem;
             }
             
             .header p {
@@ -1002,7 +1008,7 @@
             }
             
             .section {
-                padding: 60px 0;
+                padding: 48px 0;
             }
             
             .section-title {
@@ -1014,21 +1020,21 @@
             }
             
             .grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
             
             .grid-item {
                 font-size: 0.9rem;
-                min-height: 100px;
+                min-height: auto;
                 padding: 16px;
             }
             
             .feature-card {
-                padding: 30px 20px;
+                padding: 24px 16px;
             }
             
             .feature-icon {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .testimonial {
@@ -1036,19 +1042,19 @@
             }
             
             .testimonial:before {
-                font-size: 60px;
+                font-size: 50px;
             }
             
             .plan-price {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .cta-section {
-                padding: 50px 20px;
+                padding: 48px 16px;
             }
             
             .cta-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .stats-container {
@@ -1056,31 +1062,47 @@
             }
             
             .stat-number {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            .ad-container {
+                padding: 12px;
+                margin: 24px 0;
             }
         }
         
         @media (max-width: 576px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            
             .header-buttons {
                 flex-direction: column;
-                align-items: center;
+                gap: 12px;
             }
             
             .button {
                 width: 100%;
-                max-width: 300px;
             }
             
             .stats-container {
                 grid-template-columns: 1fr;
             }
             
-            footer .social-icons {
-                flex-wrap: wrap;
+            footer .footer-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .prompt__form-input {
+                padding: 12px 48px 12px 16px;
+                height: 48px;
+                border-radius: 24px;
+            }
+            .prompt__form-button {
+                width: 36px;
+                height: 36px;
+                right: 6px;
+            }
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 12px 16px;
             }
         }
         
@@ -1099,61 +1121,62 @@
         .featured-snippet {
             background-color: var(--card-bg);
             border-left: 4px solid var(--primary-color);
-            padding: 25px;
-            margin: 30px 0;
+            padding: 20px;
+            margin: 24px 0;
             border-radius: 0 12px 12px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .featured-snippet h3 {
             color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
         
         .use-cases {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .use-case {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 24px;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .use-case:hover {
             background-color: var(--card-hover);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .use-case h3 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
         }
         
         .use-case ul {
-            margin-left: 20px;
+            margin-left: 0;
             color: var(--text-secondary);
-            margin-bottom: 20px;
-            list-style-type: none; /* Remove default bullets */
+            margin-bottom: 16px;
+            list-style-type: none;
         }
         
         .use-case li {
-            margin-bottom: 12px;
-            line-height: 1.6;
+            margin-bottom: 10px;
+            line-height: 1.5;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
+            font-size: 0.95rem;
         }
         
         .use-case li:before {
-            content: "✓"; /* Change to checkmark or remove if unwanted */
+            content: "✓";
             position: absolute;
             left: 0;
             color: var(--primary-color);
@@ -1162,90 +1185,91 @@
         
         .ai-technology-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .ai-tech-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 24px;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .ai-tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .ai-tech-card h3 {
             color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
         
         .ai-tech-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .blog-section {
-            margin-top: 60px;
+            margin-top: 48px;
         }
         
         .blog-posts {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
         
         .blog-post {
             background-color: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
             height: 100%;
             display: flex;
             flex-direction: column;
         }
         
         .blog-post:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .blog-image {
-            height: 200px;
+            height: 160px;
             background-color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-color);
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         
         .blog-content {
-            padding: 25px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
         .blog-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
             color: var(--text-primary);
         }
         
         .blog-excerpt {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
             flex-grow: 1;
         }
         
@@ -1253,65 +1277,67 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             transition: var(--transition);
         }
         
         .read-more:hover {
-            gap: 8px;
+            gap: 6px;
         }
         
         .ai-comparison {
-            margin-top: 60px;
+            margin-top: 48px;
         }
         
         .comparison-chart {
             width: 100%;
             overflow-x: auto;
-            margin-top: 30px;
+            margin-top: 24px;
         }
         
         table.comparison-matrix {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 16px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         table.comparison-matrix th {
             background-color: var(--card-bg);
-            padding: 15px;
+            padding: 12px;
             text-align: left;
             color: var(--primary-color);
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
         table.comparison-matrix td {
-            padding: 15px;
+            padding: 12px;
             border-bottom: 1px solid var(--accent);
             color: var(--text-secondary);
+            font-size: 0.9rem;
         }
         
         table.comparison-matrix tr:hover {
-            background-color: rgba(79, 172, 254, 0.05);
+            background-color: rgba(79, 172, 254, 0.03);
         }
         
         .winner {
-            background-color: rgba(79, 172, 254, 0.1);
+            background-color: rgba(79, 172, 254, 0.05);
             font-weight: 600;
             color: var(--primary-color) !important;
         }
         
         .breadcrumb {
-            padding: 15px 0;
-            font-size: 0.9rem;
+            padding: 12px 0;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             width: 100%;
         }
@@ -1327,106 +1353,112 @@
         }
         
         .breadcrumb span {
-            margin: 0 5px;
+            margin: 0 4px;
         }
         
         .seo-content-box {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .seo-content-box h2 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            margin-bottom: 16px;
+            font-size: 1.6rem;
         }
         
         .seo-content-box h3 {
             color: var(--text-primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
         
         .seo-content-box p {
             color: var(--text-secondary);
-            margin-bottom: 15px;
-            line-height: 1.7;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .seo-content-box ul {
             margin-left: 20px;
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         
         .seo-content-box li {
-            margin-bottom: 10px;
-            line-height: 1.6;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
         
         .structured-faq {
-            margin: 40px 0;
+            margin: 32px 0;
         }
         
         .structured-faq-item {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .structured-faq-question {
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
         
         .structured-faq-answer {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         /* Interactive Demo Section */
         .interactive-demo {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 50px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px var(--shadow-color);
             text-align: center;
         }
         
         .demo-input {
             width: 100%;
-            max-width: 600px;
-            padding: 15px;
-            margin-bottom: 20px;
+            max-width: 560px;
+            padding: 12px;
+            margin-bottom: 16px;
             border-radius: 8px;
             border: 1px solid var(--accent);
-            background-color: var(--dark-bg);
+            background-color: var(--bg-color);
             color: var(--text-primary);
+            font-size: 0.95rem;
         }
         
         .demo-button {
-            padding: 12px 24px;
+            padding: 10px 20px;
             background: var(--gradient);
-            color: var(--dark-bg);
+            color: #ffffff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .demo-output {
-            margin-top: 20px;
-            padding: 20px;
+            margin-top: 16px;
+            padding: 16px;
             background-color: var(--accent);
             border-radius: 8px;
             color: var(--text-primary);
             text-align: left;
-            max-height: 300px;
+            max-height: 240px;
             overflow-y: auto;
+            font-size: 0.9rem;
         }
         
         /* Slider for Features */
@@ -1434,32 +1466,32 @@
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 720px;
+            margin: 40px auto;
         }
         
         .slider-track {
             display: flex;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
         
         .slider-item {
             min-width: 100%;
             text-align: center;
-            padding: 20px;
+            padding: 16px;
             box-sizing: border-box;
         }
         
         .slider-nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 16px;
         }
         
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background-color: var(--accent);
             border-radius: 50%;
             cursor: pointer;
@@ -1470,89 +1502,91 @@
             background-color: var(--primary-color);
         }
         
-        /* Improved Interactive Elements */
+        /* Interactive Poll and Quiz */
         .interactive-poll, .interactive-quiz {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 50px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px var(--shadow-color);
             text-align: center;
-            max-width: 600px;
+            max-width: 560px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .poll-question, .quiz-question {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             color: var(--text-primary);
         }
         
         .poll-options, .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            max-width: 400px;
-            margin: 0 auto 25px;
+            gap: 12px;
+            max-width: 360px;
+            margin: 0 auto 20px;
         }
         
         .poll-option, .quiz-option {
-            padding: 15px 20px;
+            padding: 12px 16px;
             background-color: var(--accent);
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-primary);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 5px var(--shadow-color);
         }
         
         .poll-option:hover, .quiz-option:hover {
             background-color: var(--primary-color);
-            color: var(--dark-bg);
-            transform: translateY(-2px);
+            color: #ffffff;
+            transform: translateY(-1px);
         }
         
         .poll-option.selected, .quiz-option.selected {
             background-color: var(--primary-color);
-            color: var(--dark-bg);
+            color: #ffffff;
             border: 2px solid var(--secondary-color);
         }
         
         .poll-results, .quiz-result {
-            margin-top: 25px;
+            margin-top: 20px;
             display: none;
             background-color: var(--accent);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
         }
         
         .poll-result-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .poll-bar-container {
             flex-grow: 1;
-            background-color: var(--dark-bg);
-            border-radius: 4px;
-            height: 20px;
-            margin: 0 10px;
+            background-color: var(--bg-color);
+            border-radius: 3px;
+            height: 16px;
+            margin: 0 8px;
             overflow: hidden;
         }
         
         .poll-bar {
             height: 100%;
             background: var(--gradient);
-            transition: width 1s ease;
+            transition: width 0.8s ease;
         }
         
         .poll-percentage {
-            min-width: 40px;
+            min-width: 36px;
             text-align: right;
+            font-size: 0.85rem;
         }
         
         .quiz-result.correct {
@@ -1569,23 +1603,24 @@
         .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 16px 0;
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
         
         .data-table th, .data-table td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
             border-bottom: 1px solid var(--accent);
+            font-size: 0.9rem;
         }
         
         .data-table th {
             background-color: var(--primary-color);
-            color: var(--dark-bg);
+            color: #ffffff;
         }
         
         .data-table tr:nth-child(even) {
-            background-color: rgba(255,255,255,0.05);
+            background-color: rgba(255,255,255,0.03);
         }
     </style>
 </head>
@@ -1602,56 +1637,43 @@
     <!-- Left Sidebar for Ads -->
     <div class="sidebar" id="left-sidebar">
         <span class="close-sidebar" onclick="closeSidebar('left-sidebar')">×</span>
-        <h3>AI Resources</h3>
         <div class="sidebar-content">
             <div class="ad-container">
-                <div class="ad-label">Advertisement</div>
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-                <!-- Left Sidebar Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
+                     data-ad-format="autorelaxed"
                      data-ad-client="ca-pub-5477043556031676"
-                     data-ad-slot="1234567890"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                     data-ad-slot="5654740566"></ins>
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-            <h3>AI Tools Comparison</h3>
-            <p>See how Byte AI compares to ChatGPT, Gemini, and other AI assistants in terms of features, pricing, and capabilities.</p>
-            <a href="#ai-comparison" class="read-more">Compare Now →</a>
         </div>
     </div>
     
     <!-- Right Sidebar for Ads -->
     <div class="sidebar" id="right-sidebar">
         <span class="close-sidebar" onclick="closeSidebar('right-sidebar')">×</span>
-        <h3>Sponsored Content</h3>
         <div class="sidebar-content">
-            <div class="ad-container">
-                <div class="ad-label">Advertisement</div>
+           <div class="ad-container">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-                <!-- Right Sidebar Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
+                     data-ad-format="autorelaxed"
                      data-ad-client="ca-pub-5477043556031676"
-                     data-ad-slot="1234567890"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                     data-ad-slot="5654740566"></ins>
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-            <h3>Latest AI News</h3>
-            <p>Discover the newest advancements in artificial intelligence technology and how Byte AI is implementing these breakthroughs.</p>
-            <a href="#blog-section" class="read-more">Read More →</a>
         </div>
     </div>
     
     <div class="header">
-        <h1>Byte AI - Best Free AI Assistant 2025 for Content Creation, Coding & Research</h1>
-        <p>Powered by cutting-edge artificial intelligence from UTHAKKAN, Byte AI helps with content creation, coding assistance, research, and productivity enhancement. Best free alternative to ChatGPT, Gemini, and DeepSeek in 2025 for advanced AI tools, generative AI, multimodal AI, ethical AI implementation, autonomous agents, and sustainable AI. Join the AI trends 2025 revolution with our free AI chatbot. With over 1 million active users and 500 million queries processed in 2025, Byte AI leads the market in free AI solutions.</p>
+        <h1>Byte AI</h1>
+        <h2>Best Free AI Assistant for Content Creation, Coding & Research</h2>
+        <p>Byte AI by UTHAKKAN, founded 2024 in Kannur, India, is a free no-login AI for content, coding, and research. A 2025 top alternative to ChatGPT, Gemini, and DeepSeek, it serves 1M+ users and 500M+ queries with zero data storage.</p>
         <div class="textarea-container">
             <textarea id="chat-input" placeholder="What would you like to ask? Try 'Generate a blog post about AI trends 2025'" class="prompt__form-input" required></textarea>
             <button class="prompt__form-button" id="sendButton">
@@ -1664,18 +1686,16 @@
         </div>
     </div>
 
-    <!-- Ad Placement 1 - Compliant with AdSense -->
+    <!-- Ad Placement 1 - Multiplex for high revenue -->
     <div class="container">
         <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
+            <span class="ad-label">Sponsored</span>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-            <!-- Top Banner Ad -->
             <ins class="adsbygoogle"
                  style="display:block"
+                 data-ad-format="autorelaxed"
                  data-ad-client="ca-pub-5477043556031676"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-ad-slot="5654740566"></ins>
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -1686,7 +1706,7 @@
     <div class="container">
         <div class="seo-content-box">
             <h2>What is Byte AI - The Best Free AI Assistant 2025</h2>
-            <p>Byte AI is the leading free AI assistant in 2025, an advanced artificial intelligence chatbot developed by UTHAKKAN that excels in content creation, coding help, research tools, and productivity enhancement. As the top free ChatGPT alternative 2025, Byte AI provides superior AI capabilities without subscription costs, making it the best AI tool for writers, developers, students, and businesses. In 2025, Byte AI has processed over 500 million queries, with 95% user satisfaction rate based on internal surveys.</p>
+            <p>Byte AI is the leading free AI assistant in 2025, an advanced artificial intelligence chatbot developed by UTHAKKAN that excels in content creation, coding help, research tools, and productivity enhancement. As the top free ChatGPT alternative 2025, Byte AI provides superior AI capabilities without subscription costs, making it the best AI tool for writers, developers, students, and businesses. Founded in 2024 by Ajmal U K, an MCA student skilled in AI digital tools, Byte AI has processed over 500 million queries, with 95% user satisfaction rate based on internal surveys. Contact: ajmaluk.contact@gmail.com. Social: LinkedIn (www.linkedin.com/in/ajmaluk), Twitter/X[](https://x.com/ajmal_uk_), GitHub[](https://github.com/ajmal-uk). Solo project managed by Ajmal.</p>
             
             <p>Unlike other AI assistants, Byte AI specializes in:</p>
             <ul>
@@ -1698,11 +1718,12 @@
                 <li>Autonomous AI agents for complex task execution with 98% accuracy</li>
                 <li>Ethical AI with bias detection and privacy protection complying with GDPR and CCPA</li>
                 <li>Sustainable AI with energy-efficient processing using 30% less power than competitors</li>
+                <li>Image generation, web search, advanced reasoning (“think”)</li>
             </ul>
             
             <div class="featured-snippet">
                 <h3>Key Features of Byte AI - Top Free AI Tool 2025</h3>
-                <p>Byte AI outperforms other AI assistants with unlimited free access, advanced AI capabilities, and intuitive interface. It's the best free AI assistant 2025 for content generation, technical writing, programming support, and more - perfect for creators, developers, and professionals seeking a reliable ChatGPT alternative with 2025 AI trends like generative AI and multimodal capabilities. Data shows Byte AI generates content 2x faster than traditional methods.</p>
+                <p>Byte AI outperforms other AI assistants with unlimited free access, advanced AI capabilities, and intuitive interface. It's the best free AI assistant 2025 for content generation, technical writing, programming support, and more - perfect for creators, developers, and professionals seeking a reliable ChatGPT alternative with 2025 AI trends like generative AI and multimodal capabilities. Data shows Byte AI generates content 2x faster than traditional methods. Inspiration from ChatGPT, powered by Gemini AI model with multi-modal architecture. No login needed, 100% free, free image generation, real-time web search & reasoning. Future plans: Expand context window, develop own AI model, add video generation, introduce agentic features.</p>
             </div>
             
             <h3>Byte AI Usage Statistics 2025</h3>
@@ -1717,12 +1738,12 @@
                 <tbody>
                     <tr>
                         <td>Active Users</td>
-                        <td>1,200,000</td>
+                        <td>1,000,000+</td>
                         <td>+150%</td>
                     </tr>
                     <tr>
                         <td>Daily Queries</td>
-                        <td>5,000,000</td>
+                        <td>1,000,000+</td>
                         <td>+200%</td>
                     </tr>
                     <tr>
@@ -1748,32 +1769,49 @@
     <div class="container">
         <div class="grid-container">
             <div class="grid">
-            <div class="grid-item">Write an essay on the impact of social media on society.</div>
-            <div class="grid-item">Create a poem about hope and resilience.</div>
-            <div class="grid-item">Write a short story about overcoming fear.</div>
-            <div class="grid-item">What are the most trending content ideas for YouTube in 2025?</div>
-            <div class="grid-item">How can I create viral content for TikTok?</div>
-            <div class="grid-item">What are the best topics for a personal blog in 2025?</div>
-            <div class="grid-item">Write an essay on climate change and its effects on the environment.</div>
-            <div class="grid-item">Write a story about a day in the life of a time traveler.</div>
-            <div class="grid-item">How do I write a captivating YouTube video description?</div>
-            <div class="grid-item">What are some creative ideas for a podcast?</div>
-            <div class="grid-item">Write a poem about the beauty of nature.</div>
-            <div class="grid-item">What are the best strategies for growing a YouTube channel?</div>
-            <div class="grid-item">Write an essay on the importance of mental health awareness.</div>
-            <div class="grid-item">What are some trending challenges on TikTok right now?</div>
-            <div class="grid-item">How do I make my YouTube thumbnails stand out?</div>
-            <div class="grid-item">Write a short story about an unexpected friendship.</div>
-            <div class="grid-item">What are some unique video ideas for Instagram Reels?</div>
-            <div class="grid-item">How can I improve my writing for social media?</div>
-            <div class="grid-item">Write an essay on the impact of technology on human relationships.</div>
-            <div class="grid-item">What are the best tips for starting a successful podcast?</div>
-            <div class="grid-item">Generate code for a simple Python web app.</div>
-            <div class="grid-item">Explain quantum computing in simple terms.</div>
-            <div class="grid-item">Create a business plan for a startup in AI sector.</div>
-            <div class="grid-item">What are the top AI trends for 2026?</div>
-            <div class="grid-item">How to implement machine learning in e-commerce.</div>
+                <div class="grid-item">Write an essay on the impact of social media on society.</div>
+                <div class="grid-item">Create a poem about hope and resilience.</div>
+                <div class="grid-item">Write a short story about overcoming fear.</div>
+                <div class="grid-item">What are the most trending content ideas for YouTube in 2025?</div>
+                <div class="grid-item">How can I create viral content for TikTok?</div>
+                <div class="grid-item">What are the best topics for a personal blog in 2025?</div>
+                <div class="grid-item">Write an essay on climate change and its effects on the environment.</div>
+                <div class="grid-item">Write a story about a day in the life of a time traveler.</div>
+                <div class="grid-item">How do I write a captivating YouTube video description?</div>
+                <div class="grid-item">What are some creative ideas for a podcast?</div>
+                <div class="grid-item">Write a poem about the beauty of nature.</div>
+                <div class="grid-item">What are the best strategies for growing a YouTube channel?</div>
+                <div class="grid-item">Write an essay on the importance of mental health awareness.</div>
+                <div class="grid-item">What are some trending challenges on TikTok right now?</div>
+                <div class="grid-item">How do I make my YouTube thumbnails stand out?</div>
+                <div class="grid-item">Write a short story about an unexpected friendship.</div>
+                <div class="grid-item">What are some unique video ideas for Instagram Reels?</div>
+                <div class="grid-item">How can I improve my writing for social media?</div>
+                <div class="grid-item">Write an essay on the impact of technology on human relationships.</div>
+                <div class="grid-item">What are the best tips for starting a successful podcast?</div>
+                <div class="grid-item">Generate code for a simple Python web app.</div>
+                <div class="grid-item">Explain quantum computing in simple terms.</div>
+                <div class="grid-item">Create a business plan for a startup in AI sector.</div>
+                <div class="grid-item">What are the top AI trends for 2026?</div>
+                <div class="grid-item">How to implement machine learning in e-commerce.</div>
+            </div>
         </div>
+    </div>
+    
+    <!-- Ad Placement 2 - In-article for engagement -->
+    <div class="container">
+        <div class="ad-container">
+            <span class="ad-label">Sponsored</span>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-5477043556031676"
+                 data-ad-slot="1161478703"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
     
@@ -1781,13 +1819,13 @@
     <div class="container section">
         <div class="seo-content-box">
             <h2>Why Byte AI is the Best Free AI Assistant 2025</h2>
-            <p>When searching for the "best free AI assistant 2025" or comparing "Byte AI vs ChatGPT 2025", Byte AI emerges as the superior choice with its advanced features and zero-cost model. As the top Gemini alternative and DeepSeek alternative, Byte AI provides unmatched value in the AI assistant landscape with 2025 AI trends like autonomous agents, multimodal AI, ethical AI governance, and sustainable AI. Independent benchmarks show Byte AI outperforming competitors by 25% in response accuracy.</p>
+            <p>When searching for the "best free AI assistant 2025" or comparing "Byte AI vs ChatGPT 2025", Byte AI emerges as the superior choice with its advanced features and zero-cost model. As the top Gemini alternative and DeepSeek alternative, Byte AI provides unmatched value in the AI assistant landscape with 2025 AI trends like autonomous agents, multimodal AI, ethical AI governance, and sustainable AI. Independent benchmarks show Byte AI outperforming competitors by 25% in response accuracy. Mission: An AI chatbot like ChatGPT — no login or signup, no data storage. Location: Kannur, Kerala, India.</p>
             
             <ul>
                 <li><strong>Unlimited Free Access:</strong> Full functionality without limitations - perfect free AI tool for daily use, supporting up to 10,000 queries per month per user</li>
                 <li><strong>Superior Content Creation:</strong> Advanced AI writing assistant for professional-grade outputs with generative AI, supporting 50+ content types</li>
                 <li><strong>Expert Coding Support:</strong> Best AI coding assistant 2025 with context-aware help and autonomous debugging for 20+ languages</li>
-                <li><strong>Robust Privacy:</strong> Secure AI assistant with end-to-end encryption and ethical AI practices, zero data retention policy</li>
+                <li><strong>Robust Privacy:</strong> Secure AI assistant with end-to-end encryption and ethical AI practices, zero data retention policy. No data collection, local storage only.</li>
                 <li><strong>Intuitive Design:</strong> User-friendly interface with multimodal AI for the best AI experience, customizable with 15+ themes</li>
                 <li><strong>Sustainable AI:</strong> Energy-efficient processing following 2025 AI sustainability trends, carbon footprint reduced by 40%</li>
                 <li><strong>Voice Integration:</strong> New voice-to-text and text-to-voice features for hands-free operation</li>
@@ -1851,18 +1889,17 @@
         </div>
     </div>
 
-    <!-- Ad Placement 2 - Compliant with AdSense -->
+    <!-- Ad Placement 3 - In-feed for seamless integration -->
     <div class="container">
         <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
+            <span class="ad-label">Sponsored</span>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-            <!-- Middle Banner Ad -->
             <ins class="adsbygoogle"
                  style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-6t+ed+2i-1n-4w"
                  data-ad-client="ca-pub-5477043556031676"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-ad-slot="2862692742"></ins>
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -1872,7 +1909,7 @@
     <!-- Features Section with Slider -->
     <div class="container section">
         <h2 class="section-title">Unleash Your Potential with Powerful AI Features</h2>
-        <p class="section-subtitle">Byte AI is engineered with cutting-edge 2025 AI trends to make work smarter, faster, and more efficient. Discover tools powered by generative AI, multimodal capabilities, autonomous agents, ethical AI governance, and new features like voice integration and real-time analytics.</p>
+        <p class="section-subtitle">Byte AI is engineered with cutting-edge 2025 AI trends to make work smarter, faster, and more efficient. Discover tools powered by generative AI, multimodal capabilities, autonomous agents, ethical AI governance, and new features like voice integration and real-time analytics. Technology: Gemini AI model, multi-modal architecture.</p>
         <div class="feature-slider">
             <div class="slider-track">
                 <div class="slider-item">
@@ -1935,7 +1972,7 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3 class="feature-title">Secure & Private</h3>
-                        <p class="feature-desc">Your data is protected with end-to-end encryption and a privacy-first architecture, ensuring your conversations remain confidential with ethical AI governance. Compliance rate: 100%.</p>
+                        <p class="feature-desc">Your data is protected with end-to-end encryption and a privacy-first architecture, ensuring your conversations remain confidential with ethical AI governance. Compliance rate: 100%. No server-side storage, local browser only.</p>
                     </div>
                 </div>
                 <div class="slider-item">
@@ -1974,9 +2011,39 @@
                         <p class="feature-desc">Get insights into your usage patterns, productivity gains, and content quality metrics.</p>
                     </div>
                 </div>
+                <div class="slider-item">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3 class="feature-title">Image Generation</h3>
+                        <p class="feature-desc">Generate high-quality images from text descriptions, free and unlimited in premium plans.</p>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="feature-title">Web Search</h3>
+                        <p class="feature-desc">Real-time web search integration for up-to-date information and research.</p>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">Advanced Reasoning</h3>
+                        <p class="feature-desc">Use 'think' mode for step-by-step reasoning and complex problem-solving.</p>
+                    </div>
+                </div>
             </div>
             <div class="slider-nav">
                 <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
                 <div class="slider-dot"></div>
                 <div class="slider-dot"></div>
                 <div class="slider-dot"></div>
@@ -1991,16 +2058,15 @@
         </div>
     </div>
    
-    <!-- Ad Placement 3 - Compliant with AdSense -->
+    <!-- Ad Placement 4 - Display ad for visibility -->
     <div class="container">
         <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
+            <span class="ad-label">Sponsored</span>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-            <!-- Features Bottom Ad -->
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5477043556031676"
-                 data-ad-slot="1234567890"
+                 data-ad-slot="1907067246"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
@@ -2095,18 +2161,17 @@
         </div>
     </div>
     
-    <!-- Ad Placement 4 - Compliant with AdSense -->
+    <!-- Ad Placement 5 - In-article for mid-content revenue -->
     <div class="container">
         <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
+            <span class="ad-label">Sponsored</span>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-            <!-- Blog Bottom Ad -->
             <ins class="adsbygoogle"
-                 style="display:block"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
                  data-ad-client="ca-pub-5477043556031676"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-ad-slot="1161478703"></ins>
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -2119,7 +2184,7 @@
         <p class="section-subtitle">Don't just take our word for it - hear from people using Byte AI every day. With 4.9/5 rating from 1850+ reviews, Byte AI is the top-rated free AI assistant 2025. We've collected over 2,000 testimonials in 2025 alone.</p>
         <div class="testimonials">
             <div class="testimonial">
-                <p class="testimonial-text">Byte AI has transformed how I create content for my YouTube channel. With generative AI, I can generate script outlines in minutes instead of hours instead of hours, and the quality is consistently excellent. Best free AI tool 2025!</p>
+                <p class="testimonial-text">Byte AI has transformed how I create content for my YouTube channel. With generative AI, I can generate script outlines in minutes instead of hours, and the quality is consistently excellent. Best free AI tool 2025!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">JS</div>
                     <div class="author-info">
@@ -2174,10 +2239,10 @@
     <!-- Stats Section -->
     <div class="container section">
         <h2 class="section-title">Byte AI by the Numbers in 2025</h2>
-        <p class="section-subtitle">Our growth and impact in numbers. Data updated as of August 13, 2025.</p>
+        <p class="section-subtitle">Our growth and impact in numbers. Data updated as of August 14, 2025.</p>
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-number">1.2M+</div>
+                <div class="stat-number">1M+</div>
                 <p class="stat-label">Active Users</p>
             </div>
             <div class="stat-card">
@@ -2210,7 +2275,7 @@
         <div class="ai-technology-section">
             <div class="ai-tech-card">
                 <h3>Generative AI</h3>
-                <p>Leverages advanced models to create original content, code, and ideas. In 2025, our generative capabilities have improved by 60% in creativity scores.</p>
+                <p>Leverages advanced advanced models to create original content, code, and ideas. In 2025, our generative capabilities have improved by 60% in creativity scores.</p>
             </div>
             <div class="ai-tech-card">
                 <h3>Multimodal AI</h3>
@@ -2238,7 +2303,7 @@
     <!-- Blog Section -->
     <div class="container section" id="blog-section">
         <h2 class="section-title">Latest AI Insights from Byte AI Blog</h2>
-        <p class="section-subtitle">Stay updated with AI trends 2025, tips, and tutorials. Our blog has over 500 articles published in 2025, with 2 million views.</p>
+        <p class="section-subtitle">Stay updated with AI trends 2025, tips, and tutorials. Our blog has over 500 articles published in 2025, with 2 million views. Topics: AI trends, tool comparisons, Gemini AI tips, ethical AI, user guides.</p>
         <div class="blog-posts">
             <div class="blog-post">
                 <div class="blog-image">AI</div>
@@ -2277,6 +2342,22 @@
                 <div class="blog-content">
                     <h3 class="blog-title">Sustainable AI Practices in 2025</h3>
                     <p class="blog-excerpt">How Byte AI reduces carbon footprint while maintaining performance. Data on energy savings and green initiatives.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">Gemini</div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Gemini AI Tips and Tricks</h3>
+                    <p class="blog-excerpt">Maximize your use of Gemini model in Byte AI for better results.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">Tools</div>
+                <div class="blog-content">
+                    <h3 class="blog-title">AI Tool Comparisons 2025</h3>
+                    <p class="blog-excerpt">Byte AI vs competitors: Detailed analysis.</p>
                     <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -2379,7 +2460,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Byte AI is an advanced artificial intelligence assistant powered by natural language processing and machine learning. As the best free AI assistant 2025, it works by analyzing your input, understanding the context and intent, and generating human-like responses based on its extensive training data incorporating 2025 AI trends like generative AI and multimodal processing. The system continuously learns to provide more accurate and helpful answers, making it a superior ChatGPT alternative. Our model is trained on 10 petabytes of data.</p>
+                    <p>Byte AI is an advanced artificial intelligence assistant powered by natural language processing and machine learning. As the best free AI assistant 2025, it works by analyzing your input, understanding the context and intent, and generating human-like responses based on its extensive training data incorporating 2025 AI trends like generative AI and multimodal processing. The system continuously learns to provide more accurate and helpful answers, making it a superior ChatGPT alternative. Our model is trained on 10 petabytes of data. No login required, privacy-first.</p>
                 </div>
             </div>
             
@@ -2409,7 +2490,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Absolutely. Privacy is a core principle of Byte AI. We implement end-to-end encryption for all conversations, and we don't share or sell your data to third parties. You can delete your conversation history at any time, and we don't use your interactions to train our models without explicit consent - making Byte AI one of the most secure free AI assistants 2025 with ethical AI practices. Data retention: 0 days by default.</p>
+                    <p>Absolutely. Privacy is a core principle of Byte AI. We implement end-to-end encryption for all conversations, and we don't share or sell your data to third parties. You can delete your conversation history at any time, and we don't use your interactions to train our models without explicit consent - making Byte AI one of the most secure free AI assistants 2025 with ethical AI practices. Data retention: 0 days by default. No data collection, all local storage in browser (local storage, IndexedDB). One cookie for welcome screen (byte_visited). Service "as-is", follows privacy-first principles.</p>
                 </div>
             </div>
             
@@ -2472,19 +2553,55 @@
                     <p>Byte AI offers API access in premium plans, supporting integrations with tools like Slack, Google Workspace, Microsoft Office, and GitHub for seamless workflow enhancement.</p>
                 </div>
             </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the 'no-login' concept in Byte AI?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Byte AI requires no signup or login, ensuring immediate access and complete privacy. All interactions are local to your browser.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Why is there no user count displayed?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Due to our privacy-first approach, we don't track users server-side, so real-time user counts are not available.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Usage tips for AI features</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Use clear prompts for best results. For reasoning, start with 'think step by step'.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How is privacy handled?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No data stored on servers; everything is local. See privacy policy for details.</p>
+                </div>
+            </div>
         </div>
     </div>
     
-    <!-- Ad Placement 5 - Compliant with AdSense -->
+    <!-- Ad Placement 6 - Display at bottom for retention -->
     <div class="container">
         <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
+            <span class="ad-label">Sponsored</span>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5477043556031676" crossorigin="anonymous"></script>
-            <!-- FAQ Bottom Ad -->
+            <!-- ByteAi - Blog Page -->
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5477043556031676"
-                 data-ad-slot="1234567890"
+                 data-ad-slot="1907067246"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
@@ -2496,7 +2613,7 @@
     <!-- Pricing Section -->
     <div class="container section">
         <h2 class="section-title">Simple, Transparent Pricing for Byte AI</h2>
-        <p class="section-subtitle">Choose the plan that fits your needs - cancel anytime. All plans include 2025 AI features like generative AI and multimodal capabilities. Over 80% of users start with free plan.</p>
+        <p class="section-subtitle">Choose the plan that fits your needs - cancel anytime. All plans include 2025 AI features like generative AI and multimodal capabilities. All users start with free plan.</p>
         <div class="pricing-plans">
             <div class="pricing-card">
                 <h3 class="plan-name">Free</h3>
@@ -2561,11 +2678,11 @@
         <div id="demo-output" class="demo-output"></div>
     </div>
     
-    <!-- Improved Interactive Poll -->
+    <!-- Interactive Poll -->
     <div class="container section interactive-poll">
         <h2 class="section-title">Quick Poll: Your Primary Use for AI in 2025</h2>
         <p class="poll-question">What do you use AI assistants for most?</p>
-        <div class="poll-options">
+        <div class="poll-options" id="poll-options">
             <div class="poll-option" onclick="votePoll(0)">Content Creation</div>
             <div class="poll-option" onclick="votePoll(1)">Coding Help</div>
             <div class="poll-option" onclick="votePoll(2)">Research</div>
@@ -2602,7 +2719,7 @@
         </div>
     </div>
     
-    <!-- Improved Interactive Quiz -->
+    <!-- Interactive Quiz -->
     <div class="container section interactive-quiz">
         <h2 class="section-title">AI Knowledge Quiz 2025</h2>
         <p class="quiz-question">What is the primary benefit of multimodal AI?</p>
@@ -2627,24 +2744,23 @@
     
     <footer>
         <h3>Byte AI - Best Free AI Assistant 2025</h3>
-        <p>Powered by UTHAKKAN | Created by Ajmal U K | The leading free AI tool transforming content creation, coding, research, and productivity in 2025 with generative AI, multimodal AI, and autonomous agents. Over 1.2M users worldwide.</p>
+        <p>Powered by UTHAKKAN | Created by Ajmal U K | The leading free AI tool transforming content creation, coding, research, and productivity in 2025 with generative AI, multimodal AI, and autonomous agents. Over 1M users worldwide. Mission: AI chatbot like ChatGPT — no login/signup, no data storage. Founded 2024, Kannur, Kerala, India. Contact: contact.uthakkan@gmail.com. Business hours: 24/7, response up to 72 hours. Map: <a href="https://maps.app.goo.gl/4rkxYUHiNVbchuHC7">Location</a>.</p>
         
         <div class="footer-links">
-            <a href="/about">About Us</a>
+            <a href="/">Home</a>
+            <a href="/about-us">About Us</a>
             <a href="/blog">Blog</a>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/contact">Contact</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/contact-us">Contact</a>
             <a href="/faq">FAQ</a>
+            <a href="/download-apk">Download App</a>
         </div>
         
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ajmaluk"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/ajmal_uk_"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/ajmal-uk"><i class="fab fa-github"></i></a>
         </div>
         
         <p>&copy; 2025 Byte AI by UTHAKKAN. Created by Ajmal U K. All rights reserved.</p>
@@ -2655,7 +2771,7 @@
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 60,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -2675,7 +2791,7 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.5,
+                    "value": 0.4,
                     "random": false,
                     "anim": {
                         "enable": false,
@@ -2685,7 +2801,7 @@
                     }
                 },
                 "size": {
-                    "value": 3,
+                    "value": 2.5,
                     "random": true,
                     "anim": {
                         "enable": false,
@@ -2696,14 +2812,14 @@
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
+                    "distance": 120,
                     "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+                    "opacity": 0.3,
+                    "width": 0.8
                 },
                 "move": {
                     "enable": true,
-                    "speed": 6,
+                    "speed": 4,
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -2731,9 +2847,9 @@
                 },
                 "modes": {
                     "grab": {
-                        "distance": 200,
+                        "distance": 180,
                         "line_linked": {
-                            "opacity": 1
+                            "opacity": 0.8
                         }
                     },
                     "bubble": {
@@ -2788,7 +2904,7 @@
             };
         });
 
-        // Use-case li handling (if any, assuming they have onclick in HTML, replace with this)
+        // Use-case li handling
         document.querySelectorAll('.use-case li').forEach(item => {
             item.onclick = function() {
                 sendInitialMessage(item.innerText.trim());
@@ -2796,19 +2912,19 @@
         });
 
         window.demoGenerate = function() {
-                const input = document.getElementById('demo-input').value.toLowerCase();
-                const output = document.getElementById('demo-output');
-                if (input.trim()) {
-                    sendInitialMessage(input.trim());
-                } else {
-                    output.innerHTML = 'Please enter a prompt to generate a response.';
-                }
+            const input = document.getElementById('demo-input').value.toLowerCase();
+            const output = document.getElementById('demo-output');
+            if (input.trim()) {
+                sendInitialMessage(input.trim());
+            } else {
+                output.innerHTML = 'Please enter a prompt to generate a response.';
+            }
         };
 
         // Textarea auto-resize
         chatInput.addEventListener("input", () => {
-            chatInput.style.height = "60px";
-            const newHeight = Math.min(chatInput.scrollHeight, 225);
+            chatInput.style.height = "56px";
+            const newHeight = Math.min(chatInput.scrollHeight, 200);
             chatInput.style.height = newHeight + "px";
         });
         
@@ -2824,7 +2940,7 @@
                 "Explain AI ethics...",
                 "Create a marketing plan..."
             ];
-           let questionIndex = 0;
+            let questionIndex = 0;
             
             function updatePlaceholder() {
                 textarea.setAttribute('placeholder', questions[questionIndex]);
@@ -2901,9 +3017,12 @@
             const gridItems = Array.from(grid.children);
             for (let i = gridItems.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                grid.appendChild(gridItems[j]);
+                [gridItems[i], gridItems[j]] = [gridItems[j], gridItems[i]];
             }
+            gridItems.forEach(item => grid.appendChild(item));
         }
+        
+        shuffleGrid();
         
         // Sidebar functionality
         function closeSidebar(sidebarId) {
