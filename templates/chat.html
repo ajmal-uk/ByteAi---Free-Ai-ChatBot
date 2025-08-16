@@ -4257,7 +4257,7 @@ function displayLoadingAnimation(options) {
         chatHistoryContainer.appendChild(responseMessageElement);
         scrollToBottom();
         requestApiResponse(responseMessageElement, options);
-    } else if (options.imageGeneration) {
+    } else if (options.imageGeneration || options.imageModification) {
         const randomLoadingMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
         const loadingHtml = `
             <div class="message__content">
@@ -4750,7 +4750,6 @@ const messageElement = editIcon.closest('.message--outgoing');
             showToast('Edited message cannot be empty!', 'error');
             return;
         }
-        // Determine options based on the edited text
         const editedOptions = determineOptions(editedText);
         const sessionIndex = chatSessions.findIndex(session => session.id === currentSessionId);
         if (sessionIndex !== -1) {
@@ -4764,7 +4763,6 @@ const messageElement = editIcon.closest('.message--outgoing');
                         console.error('Failed to delete old image:', error);
                     }
                 }
-                // Update chat with edited text and options
                 chatSessions[sessionIndex].chats[chatIndex].userInput = editedText;
                 chatSessions[sessionIndex].chats[chatIndex].aiResponse = "";
                 chatSessions[sessionIndex].chats[chatIndex].feedback = null;
