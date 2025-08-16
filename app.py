@@ -1,6 +1,7 @@
 import os
 import re
-from flask import Flask, render_template, request, jsonify, send_from_directory, send_file
+from dotenv import load_dotenv
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import google.generativeai as genai
 import random
 from groq import Groq
@@ -14,11 +15,15 @@ import base64
 from requests.exceptions import RequestException
 import traceback
 
+load_dotenv('/home/byteai/mysite/.env')
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 GEMINI_API_LIST = [k.strip() for k in os.getenv("GEMINI_API_LIST", "").split(",") if k.strip()]
 GROQ_API_LIST = [k.strip() for k in os.getenv("GROQ_API_LIST", "").split(",") if k.strip()]
+
+print(GEMINI_API_LIST)
 
 app = Flask(__name__)
 CORS(app)
@@ -174,7 +179,7 @@ def Gemini_generate_image(prompt: str):
             client = genai_image.Client(api_key=api_key)
             contents = prompt
             response = client.models.generate_content(
-                model="gemini-2.0-flash-exp-image-generation",
+                model="gemini-2.0-flash-preview-image-generation",  # Corrected model name
                 contents=contents,
                 config=types.GenerateContentConfig(response_modalities=['TEXT', 'IMAGE'])
             )
@@ -191,7 +196,6 @@ def Gemini_generate_image(prompt: str):
             logger.exception("Gemini image generation failed on a key, rotating.")
             last_exc = e
     raise RuntimeError(f"Image generation failed with all Gemini keys. Last error: {last_exc}")
-
 def Prompt_generation(user_message, 
                       userName='User', 
                       previousUserInputs=None, 
@@ -245,10 +249,6 @@ def privacy():
 def about():
     return render_template('about.html')
 
-@app.route('/privacy-policy')
-def privacy():
-    return render_template('privacy.html')
-
 @app.route('/blog')
 def blog():
     return render_template('blog.html')
@@ -271,59 +271,59 @@ def download_apk():
 
 
 
-@app.route('/open-weights-vs-closed-models-2025')
+@app.route('/blog/open-weights-vs-closed-models-2025')
 def blog1():
-    return render_template('open-weights-vs-closed-models-2025.html')
+    return render_template('blogs/open-weights-vs-closed-models-2025.html')
 
-@app.route('/top-ai-trends-2025')
+@app.route('/blog/top-ai-trends-2025')
 def blog2():
-    return render_template('top-ai-trends-2025.html')
+    return render_template('blogs/top-ai-trends-2025.html')
 
-@app.route('/reliable-agents-production-patterns')
+@app.route('/blog/reliable-agents-production-patterns')
 def blog3():
-    return render_template('reliable-agents-production-patterns.html')
+    return render_template('blogs/reliable-agents-production-patterns.html')
 
-@app.route('/rag-2025-small-fast-cheap')
+@app.route('/blog/rag-2025-small-fast-cheap')
 def blog4():
-    return render_template('rag-2025-small-fast-cheap.html')
+    return render_template('blogs/rag-2025-small-fast-cheap.html')
 
-@app.route('/edge-on-device-copilots')
+@app.route('/blog/edge-on-device-copilots')
 def blog5():
-    return render_template('edge-on-device-copilots.html')
+    return render_template('blogs/edge-on-device-copilots.html')
 
-@app.route('/ai-healthcare-innovations')
+@app.route('/blog/ai-healthcare-innovations')
 def blog6():
-    return render_template('ai-healthcare-innovations.html')
+    return render_template('blogs/ai-healthcare-innovations.html')
 
-@app.route('/llm-security-hardening')
+@app.route('/blog/llm-security-hardening')
 def blog7():
-    return render_template('llm-security-hardening.html')
+    return render_template('blogs/llm-security-hardening.html')
 
-@app.route('/teaching-with-ai-patterns')
+@app.route('/blog/teaching-with-ai-patterns')
 def blog8():
-    return render_template('teaching-with-ai-patterns.html')
+    return render_template('blogs/teaching-with-ai-patterns.html')
 
-@app.route('/finance-copilots-guardrails')
+@app.route('/blog/finance-copilots-guardrails')
 def blog9():
-    return render_template('finance-copilots-guardrails.html')
+    return render_template('blogs/finance-copilots-guardrails.html')
 
-@app.route('/legal-tech-contracts-trust')
+@app.route('/blog/legal-tech-contracts-trust')
 def blog10():
-    return render_template('legal-tech-contracts-trust.html')
+    return render_template('blogs/legal-tech-contracts-trust.html')
 
-@app.route('/multimodal-benchmarks-predict-ux')
+@app.route('/blog/multimodal-benchmarks-predict-ux')
 def blog11():
-    return render_template('multimodal-benchmarks-predict-ux.html')
+    return render_template('blogs/multimodal-benchmarks-predict-ux.html')
 
 
-@app.route('/climate-tech-ai-models-that-matter')
+@app.route('/blog/climate-tech-ai-models-that-matter')
 def blog12():
-    return render_template('climate-tech-ai-models-that-matter.html')
+    return render_template('blogs/climate-tech-ai-models-that-matter.html')
 
 
-@app.route('/gemini-product-photo-workflows')
+@app.route('/blog/gemini-product-photo-workflows')
 def blog13():
-    return render_template('gemini-product-photo-workflows.html')
+    return render_template('blogs/gemini-product-photo-workflows.html')
 
 
 # Asset routes
@@ -334,6 +334,14 @@ def google_verification():
 @app.route('/robots.txt')
 def robots():
     return send_from_directory('static', 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
+@app.route('/llms.txt')
+def llms():
+    return send_from_directory('assets', 'llms.txt')
 
 @app.route('/ads.txt')
 def ads():
@@ -414,8 +422,9 @@ def ByteAi():
         previousUserInputs = []
 
         if previousChats:
+            previousChats.pop()
             if previousChats:
-                previous_chat = previousChats[-1]
+                previous_chat = previousChats.pop()
             if previousChats:
                 seen = set()
                 cleaned_inputs = []
@@ -425,7 +434,9 @@ def ByteAi():
                             cleaned_inputs.append(clean_input)
                             seen.add(clean_input)
                 previousUserInputs = cleaned_inputs
-        print(previous_chat, previousUserInputs)
+
+        print(previous_chat)
+        print(previousUserInputs)
 
         kb_response = get_ai_response(user_message)
         if kb_response and not (image_generation or image_modification):

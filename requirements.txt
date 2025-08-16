@@ -1,0 +1,8 @@
+flask
+google-generativeai
+groq
+google-genai
+flask-cors
+googlesearch-python
+requests
+pip install flask google-generativeai groq google-genai flask-cors googlesearch-python requests python-dotenv
